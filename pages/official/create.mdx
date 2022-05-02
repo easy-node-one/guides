@@ -59,9 +59,9 @@ For example, if you'd like to recover your wallet from a mnemonic phrase, run th
 ./hmy keys recover-from-mnemonic [myUserAccount] --passphrase
 ```
 
-<Callout>
- Add your linux user account name in place of [myUserAccount] - We use serviceharmony as our user name.
-</Callout>
+> <Callout>
+> Add your linux user account name in place of [myUserAccount] - We use serviceharmony as our user name.
+> </Callout>
 
 You can also replace recover-from-mnemonic with the importing option of your choice on the list above.
 
@@ -104,11 +104,11 @@ Here's the example command given in the office guide below. I'll suggest some up
     --max-total-delegation 100000000 --min-self-delegation 10000 --passphrase
 ```
 
-<Callout>
-Copy the entire command. **Extra white spaces in the command could cause errors.**
-
-Name, identity, details, security-contact and website need to be put in double quotes if there are more than one word separated by space (example --name "John the validator").
-</Callout>
+> <Callout>
+> Copy the entire command. **Extra white spaces in the command could cause errors.**
+>
+> Name, identity, details, security-contact and website need to be put in double quotes if there are more than one word separated by space (example --name "John the validator").
+> </Callout>
 
 ### Our suggestions
 
@@ -128,23 +128,23 @@ With that in mind, the only extra item we suggest to include is the --identity i
     --max-total-delegation 100000000 --min-self-delegation 10000 --passphrase
 ```
 
-<Callout>
-Copy the entire command. **Extra white spaces in the command could cause errors.**
-
-**Decide on your max-change-rate & max-rate before sending your command. These cannot be modified once created.**
-
-validator-addr - Your Validator wallet with 10001+ coins available to delegate at least 10k.  
-amount - Must be at least 10k. Have extra one available for fees. 1 $ONE is enough currently.  
-bls-pubkeys - Your BLS public key  
-name - The name you want listed on the validator staking page  
-identity - Your validator logo string you made earlier  
-details - The details you want on the validator staking page  
-security-contact - Your email address  
-website - Your website or social media account  
-**max-change-rate** - Maximum you can adjust your rate in a 24 hour period  
-**max-rate** - Maximum rate you can charge as a fee on your validator  
-rate - Your current fee rate  
-max-total-delegation - The max $ONE that can be delegated by one single wallet  
-min-self-delegation - Must be at least 10k, you can leave this at 10k.
-</Callout>
+> <Callout>
+> Copy the entire command. **Extra white spaces in the command could cause errors.**
+> 
+> **Decide on your max-change-rate & max-rate before sending your command. These cannot be modified once created.**
+> 
+> validator-addr - Your Validator wallet with 10001+ coins available to delegate at least 10k.  
+> amount - Must be at least 10k. Have extra one available for fees. 1 $ONE is enough currently.  
+> bls-pubkeys - Your BLS public key  
+> name - The name you want listed on the validator staking page  
+> identity - Your validator logo string you made earlier  
+> details - The details you want on the validator staking page  
+> security-contact - Your email address  
+> website - Your website or social media account  
+> **max-change-rate** - Maximum you can adjust your rate in a 24 hour period  
+> **max-rate** - Maximum rate you can charge as a fee on your validator  
+> rate - Your current fee rate  
+> max-total-delegation - The max $ONE that can be delegated by one single wallet  
+> min-self-delegation - Must be at least 10k, you can leave this at 10k.
+> </Callout>
 
