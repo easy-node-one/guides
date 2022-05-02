@@ -1,0 +1,151 @@
+#### Notes on the creating a validator section
+---
+
+# Creating A Validator
+
+## 1. Creating a new validator wallet
+
+This section will walk you through making a brand new wallet. If that's what you'd like to do you can follow that. 
+
+### Another Option - Using an existing wallet instead
+
+You can also import an existing wallet in a variety of ways. Take a look at the output of the command `./hmy keys` below to see your options.
+
+```text
+./hmy keys
+Manage your local keys
+
+Usage:
+  hmy keys [flags]
+  hmy keys [command]
+
+Available Commands:
+  add                   Create a new keystore key
+  check-passphrase      Check if passphrase for given account is valid.
+  export-ks             Export the keystore file contents
+  export-private-key    Export the secp256k1 private key
+  generate-bls-key      Generate bls keys then encrypt and save the private key with a requested passphrase
+  generate-bls-keys     Generates multiple bls keys for a given shard network configuration and then encrypts and saves the private key with a requested passphrase
+  get-public-bls-key    Get the public bls key associated with the provided private bls key
+  import-ks             Import an existing keystore key
+  import-private-key    Import an existing keystore key (only accept secp256k1 private keys)
+  list                  List all the local accounts
+  location              Show where `hmy` keeps accounts & their keys
+  mnemonic              Compute the bip39 mnemonic for some input entropy
+  recover-bls-key       Recover bls keys from an encrypted bls key file
+  recover-from-mnemonic Recover account from mnemonic
+  remove                Remove a key from the keystore
+  save-bls-key          Encrypt and save the bls private key with a requested passphrase
+
+Flags:
+  -h, --help   help for keys
+
+Global Flags:
+      --file string   Path to file for given command when applicable
+  -e, --ledger        Use ledger hardware wallet
+      --no-latest     Do not add 'latest' to RPC params
+      --no-pretty     Disable pretty print JSON outputs
+  -n, --node string   <host> (default "http://localhost:9500")
+  -v, --verbose       dump out debug information, same as env var HMY_ALL_DEBUG=true
+
+Use "hmy keys [command] --help" for more information about a command.
+```
+
+For example, if you'd like to recover your wallet from a mnemonic phrase, run the following command.
+
+```text
+./hmy keys recover-from-mnemonic [myUserAccount] --passphrase
+```
+
+{% hint style="warning" %}
+ Add your linux user account name in place of \[myUserAccount\] - We use serviceharmony as our user name.
+{% endhint %}
+
+You can also replace recover-from-mnemonic with the importing option of your choice on the list above.
+
+After you've created a wallet or imported an existing wallet successfully you can view your registered validator wallet address with the following command.
+
+```text
+./hmy keys list
+```
+
+### Checking your information
+
+The rest of the commands in the guide show you how to pull other information if necessary.
+
+## 2. Creating a Validator
+
+Here's the example command given in the office guide below. I'll suggest some updates and give an example command in the following steps.
+
+{% tabs %}
+{% tab title="Mainnet" %}
+```bash
+./hmy --node="https://api.s0.t.hmny.io" staking create-validator \
+    --validator-addr [ONE ADDRESS] --amount 10000 \
+    --bls-pubkeys [BLS PUBLIC KEY1],[BLS PUBLIC KEY2] \
+    --name "[NAME]" --identity "[IDENTITY]" --details "DETAILS" \
+    --security-contact "CONTACT" --website "YOUR-WEBSITE.COM" \
+    --max-change-rate 0.1 --max-rate 0.1 --rate 0.1 \
+    --max-total-delegation 100000000 --min-self-delegation 10000 --passphrase
+```
+{% endtab %}
+
+{% tab title="Testnet" %}
+```bash
+./hmy --node="https://api.s0.b.hmny.io" staking create-validator \
+    --validator-addr [ONE ADDRESS] --amount 10000 \
+    --bls-pubkeys [BLS PUBLIC KEY1],[BLS PUBLIC KEY2] \
+    --name "[NAME]" --identity "[IDENTITY]" --details "DETAILS" \
+    --security-contact "CONTACT" --website "YOUR-WEBSITE.COM" \
+    --max-change-rate 0.1 --max-rate 0.1 --rate 0.1 \
+    --max-total-delegation 100000000 --min-self-delegation 10000 --passphrase
+```
+{% endtab %}
+{% endtabs %}
+
+{% hint style="warning" %}
+Copy the entire command. **Extra white spaces in the command could cause errors.**
+
+Name, identity, details, security-contact and website need to be put in double quotes if there are more than one word separated by space \(example --name "John the validator"\).
+{% endhint %}
+
+### Our suggestions
+
+You'll most likely want to setup your logo for the validator. [Here's the Adding A Validator Logo](https://docs.harmony.one/home/network/validators/managing-a-validator/adding-a-validator-logo) section of the official guide that will get you set up with an identity string. We suggest including the identity string in your create-validator command.
+
+With that in mind, the only extra item we suggest to include is the --identity information. Here's an example with a fake address and information as an example.
+
+{% tabs %}
+{% tab title="Example on Mainnet w/ 1 BLS key" %}
+```bash
+./hmy --node="https://api.s0.t.hmny.io" staking create-validator \
+    --validator-addr one1rka0v5rct0857f2f*6ahn0cyd89uvravr3yjw --amount 10000 \
+    --bls-pubkeys a243b3a090063bae6aeca9215*05de1a94a033c50ab98ed98c50ab98ed984c9cf23513585e1af0cc4c9cf23513585e1af0cc \
+    --name "My Awesome Validator" --identity 05de1a94a0*33c50ab98ed98 --details "All your validator notes that show up on the staking.harmony.one site" \
+    --security-contact "myemail@address.com" --website "your-website.com" \
+    --max-change-rate 0.1 --max-rate 0.1 --rate 0.1 \
+    --max-total-delegation 100000000 --min-self-delegation 10000 --passphrase
+```
+{% endtab %}
+{% endtabs %}
+
+{% hint style="info" %}
+Copy the entire command. **Extra white spaces in the command could cause errors.**
+
+**Decide on your max-change-rate & max-rate before sending your command. These cannot be modified once created.**
+
+validator-addr - Your Validator wallet with 10001+ coins available to delegate at least 10k.  
+amount - Must be at least 10k. Have extra one available for fees. 1 $ONE is enough currently.  
+bls-pubkeys - Your BLS public key  
+name - The name you want listed on the validator staking page  
+identity - Your validator logo string you made earlier  
+details - The details you want on the validator staking page  
+security-contact - Your email address  
+website - Your website or social media account  
+**max-change-rate** - Maximum you can adjust your rate in a 24 hour period  
+**max-rate** - Maximum rate you can charge as a fee on your validator  
+rate - Your current fee rate  
+max-total-delegation - The max $ONE that can be delegated by one single wallet  
+min-self-delegation - Must be at least 10k, you can leave this at 10k.
+{% endhint %}
+

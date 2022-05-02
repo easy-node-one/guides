@@ -1,3 +1,10 @@
 {
-    
+    "index": "Hardware Requirements",
+    "standard": "Standard Linux Server",
+    "rasppi": "Raspberry Pi",
+    "setup": "Software Setup",
+    "node": "Node Setup",
+    "cloud": "Cloud Setup",
+    "create": "Creating A Validator",
+    "manage": "Managing A Validator"
 }
