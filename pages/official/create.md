@@ -58,7 +58,7 @@ For example, if you'd like to recover your wallet from a mnemonic phrase, run th
 ```
 
 {% hint style="warning" %}
- Add your linux user account name in place of \[myUserAccount\] - We use serviceharmony as our user name.
+ Add your linux user account name in place of [myUserAccount] - We use serviceharmony as our user name.
 {% endhint %}
 
 You can also replace recover-from-mnemonic with the importing option of your choice on the list above.
