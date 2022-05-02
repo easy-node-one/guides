@@ -15,11 +15,11 @@ Once you've loaded the application, create a new "Sessions" connection.
 
 Replace your node IP in the "Remote host" and change the username if needed. This is the initial setup we suggest for connecting to a newly created node on either [Digital Ocean or Vultr](../validator-guide-notes/software-setup/cloud-setup.md).
 
-![Example new connection setup using the root account](../public/image_16.png)
+![Example new connection setup using the root account](../../public/image_16.png)
 
 After you've gone through our guide, setup a user account and have a folder made for your application you can change your connection to reflect these settings. Replace the username with the username you use to run your harmony application.
 
-![Example of updated connection setup using the serviceharmony account and going to ~/harmony on load](../public/image_8.png)
+![Example of updated connection setup using the serviceharmony account and going to ~/harmony on load](../../public/image_8.png)
 
 With your SSH-browser type set to SCP you'll also get a WinSCP style window to copy files to your node while you're viewing it in terminal.
 
