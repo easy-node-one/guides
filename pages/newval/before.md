@@ -82,7 +82,7 @@ Our suggested method of logging into our Linux servers.
 
 Decide on your shard setup. We encourage making your BLS keys on any of the numbered shards 1-3 instead of shard 0 at this current time.
 
-![Current database sizes as of 9/12/2021](../../.gitbook/assets/image%20%2822%29.png)
+![Current database sizes as of 9/12/2021](../../public/image_22.png)
 
 Loading a 2nd shard requires a 2nd database that currently takes around 9.3GB.
 
