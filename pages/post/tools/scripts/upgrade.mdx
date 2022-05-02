@@ -1,3 +1,4 @@
+import Callout from 'nextra-theme-docs/callout'
 #### Our script for upgrading harmony.
 ---
 
@@ -7,13 +8,16 @@ This script is for updating the harmony server you setup with your guide.
 
 ### Scripted Upgrade of Harmony Application
 
-{% hint style="info" %}
+<div className="p-4 border border-gray-200 dark:border-gray-900 rounded mt-6">
+<Callout emoji="⚠️">
 **This is for updating your ~/harmony/harmony application only. For upgrading your operating system see our next page on** [**Ubuntu Updates**](ubuntu-update.md)**.**
-{% endhint %}
+</div>
+</Callout>
 
 If you didn't follow our full [Harmony Validator Companion Guide](../../../before-node-setup/being-a-validator/) exactly, you may need to use your Linux administrator skills to modify some of the directories below.
 
-{% hint style="danger" %}
+<div className="p-4 border border-gray-200 dark:border-gray-900 rounded mt-6">
+<Callout emoji="⚡">
 **Use these scripts at your own risk.** 
 
 You can verify the curl command still matches the official harmony validator guide on [updating a node using binary](https://docs.harmony.one/home/network/validators/node-setup/installing-updating/upgrading-node/using-binary) before proceeding.  
@@ -21,7 +25,8 @@ You can verify the curl command still matches the official harmony validator gui
 Verified working as of 6/22/2021, current version information:  
   
 Harmony \(C\) 2020. harmony, version v7108-v4.1.8-0-g004a5867 \(runner@ 2021-06-21T23:26:31+0000\)
-{% endhint %}
+</div>
+</Callout>
 
 ### Create an Upgrade Script
 
@@ -31,14 +36,15 @@ If you've set up your node fully using our guide and have your stuff in ~/harmon
 
 If you haven't used our guide and you don't have your harmony stuff in a folder, we cover 4 different possible setups below:
 
-{% hint style="danger" %}
+<div className="p-4 border border-gray-200 dark:border-gray-900 rounded mt-6">
+<Callout emoji="⚡">
 **NOTICE: If you use a custom harmony.conf file you will will want to modify these scripts to not restart the service as you will want to edit your harmony.conf file manually before restarting.**
 
 For users under 10 BLS keys this file can be left at default settings. If you use 10+ BLS keys you will need to update the file and restart your harmony service so modify the script to remove the service restart.
-{% endhint %}
+</div>
+</Callout>
 
-{% tabs %}
-{% tab title="Using Full Companion Guide Setup" %}
+> Using Full Companion Guide Setup
 ```text
 cat<<-EOF > ~/harmony/upgrade_harmony.sh
 #! /bin/bash
@@ -54,9 +60,7 @@ sleep 10
 EOF
 
 ```
-{% endtab %}
-
-{% tab title="Using ~/harmony" %}
+> Using ~/harmony
 ```
 cat<<-EOF > ~/harmony/upgrade_harmony.sh
 #! /bin/bash
@@ -71,9 +75,7 @@ EOF
 chmod +x ~/harmony/upgrade_harmony.sh
 
 ```
-{% endtab %}
-
-{% tab title="Using ~/ with stats.sh" %}
+> Using ~/ with stats.sh
 ```
 cat<<-EOF > ~/upgrade_harmony.sh
 #! /bin/bash
@@ -89,9 +91,7 @@ EOF
 chmod +x ~/harmony/upgrade_harmony.sh
 
 ```
-{% endtab %}
-
-{% tab title="Using ~/" %}
+> Using ~/
 ```
 cat<<-EOF > ~/upgrade_harmony.sh
 #! /bin/bash
@@ -105,10 +105,8 @@ EOF
 chmod +x ~/harmony/upgrade_harmony.sh
 
 ```
-{% endtab %}
-{% endtabs %}
-
-{% hint style="info" %}
+<div className="p-4 border border-gray-200 dark:border-gray-900 rounded mt-6">
+<Callout emoji="⚠️">
 Here's a breakdown of the commands inside the script we're creating above. 
 
 You may need to update file names and paths to adapt it to your needs. We have 4 customized versions already setup for you to utilize.   
@@ -119,11 +117,8 @@ You may need to update file names and paths to adapt it to your needs. We have 4
 **Using ~/** - Use this if you run your files from your user home folder or if you need a barebones script to edit as you need to configure for your system.
 
 A line by line break down of the main tab script:  
-  
 1. Creates a file named ~/harmony/upgrade\_harmony.sh - **Edit location if needed.**  
-  
 2-12. This is the guts of our new script file  
-  
 3. Make a backup folder - **Edit location if needed.**  
 4. Copy your current harmony file into the backup folder - **Edit location if needed.**  
 5. Change to ~/harmony folder - **Edit location if needed.**  
@@ -133,41 +128,28 @@ A line by line break down of the main tab script:
 9. Dump a new configuration - A new configuration is required with each upgrade  
 10. Wait a 10 seconds for harmony to start up fully  
 11. Run our [stats script](stats-script.md#how-do-i-see-what-block-were-on) to pull our stats
-{% endhint %}
-
+</div>
+</Callout>
 #### Modify Permissions
-
-After creating the file you'll need to set it to allow execution with the following command. Pick the tab for your harmony file location.
-
-{% tabs %}
-{% tab title="~/harmony" %}
+> After creating the file you'll need to set it to allow execution with the following command. Pick the tab for your harmony file location.
+> 
+> ~/harmony 
 ```text
 chmod +x ~/harmony/upgrade_harmony.sh
 ```
-{% endtab %}
-
-{% tab title="~/" %}
+> ~/
 ```
 chmod +x ~/upgrade_harmony.sh
 ```
-{% endtab %}
-{% endtabs %}
-
 ### Pull upgrade\_harmony.sh script onto your node
-
-If you've followed our guide fully, use the following to download and setup upgrade\_harmony.sh automatically:
-
+> If you've followed our guide fully, use the following to download and setup upgrade\_harmony.sh automatically:
 ```text
 wget https://raw.githubusercontent.com/easy-node-one/harmony-validator-scripts/main/upgrade/upgrade_harmony.sh && chmod +x upgrade_harmony.sh
 ```
-
 ### Run Upgrade Script
-
-Now you'll be able to run you upgrade script anytime there's a new update released with the following command in the folder with your harmony file.
-
+> Now you'll be able to run you upgrade script anytime there's a new update released with the following command in the folder with your harmony file.
 ```text
 ./upgrade_harmony.sh
 ```
-
-Once you have the script created it'll always pull the latest version of harmony from their site so you won't need to update unless there's an error or the link changes in the future.
+> Once you have the script created it'll always pull the latest version of harmony from their site so you won't need to update unless there's an error or the link changes in the future.
 
