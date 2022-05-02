@@ -1,0 +1,31 @@
+#### >-
+  Common commands to pull administrative information from your node or the
+  blockchain
+---
+
+# Common Commands
+
+## Node Info
+
+Node commands are done on a node to pull information about that nodes status or stats itself. 
+
+The command to pull your nodes blockchain local statistics are detailed in a script we [have right here](scripts/stats-script.md#how-do-i-see-what-block-were-on).
+
+### Pull all info on your currently running node
+
+Pull all the info from your currently running node, locally, run the following command.
+
+```text
+curl -s --request POST 'http://127.0.0.1:9500/' --header 'Content-Type: application/json' --data-raw '{ "jsonrpc": "2.0", "method": "hmyv2_getNodeMetadata", "params": [], "id": 1}'
+```
+
+Blockchain commands are done with hmy and can be run from anywhere hmy is installed since they query out to the blockchain servers and not locally.
+
+### Collect your rewards from your node
+
+Here's a quick command to collect the rewards for your validator wallet on your node. I usually set it up as collect.sh
+
+```text
+./hmy --node="https://api.s0.t.hmny.io" staking collect-rewards --delegator-addr [Validator_Wallet_Address] --passphrase
+```
+

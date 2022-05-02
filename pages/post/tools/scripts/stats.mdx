@@ -1,0 +1,52 @@
+# Get your stats here! Here's a simple script to poll your node and the blockchain.
+---
+
+# Current Stats Script
+
+## How do I see what block we're on?
+
+Use the commands below to download and setup a file called stats.sh in your harmony directory. Pick the tab for the shard you're on.
+
+Shard 0:
+```bash
+wget https://raw.githubusercontent.com/easy-node-one/harmony-validator-scripts/main/stats/shard_0.sh && mv shard_0.sh stats.sh && chmod +x stats.sh
+```
+
+Shard 1
+```bash
+wget https://raw.githubusercontent.com/easy-node-one/harmony-validator-scripts/main/stats/shard_1.sh && mv shard_1.sh stats.sh && chmod +x stats.sh
+```
+
+Shard 2
+```bash
+wget https://raw.githubusercontent.com/easy-node-one/harmony-validator-scripts/main/stats/shard_2.sh && mv shard_2.sh stats.sh && chmod +x stats.sh
+```
+
+Shard 3
+```bash
+wget https://raw.githubusercontent.com/easy-node-one/harmony-validator-scripts/main/stats/shard_3.sh && mv shard_3.sh stats.sh && chmod +x stats.sh
+```
+
+After downloading the file you can use vi, vim or nano to edit your stats.sh file and change the "**My Node**" label to whatever you would like, you're the admin, customize away!
+
+Now that it's set up you can run it anytime with:
+
+```bash
+./stats.sh
+```
+
+Here's an example of Shard 3 in sync via the output of ./stats.sh
+
+![Example output of our stats.sh script](../../../.gitbook/assets/image%20%282%29.png)
+
+Here's the breakdown of the output:
+
+* First line is a simple print of the date & time
+* **My Validator Node** - This is your nodes information. 
+  * Top line is shard 0 bottom is shard 3 in this example.
+* **External Harmony Node** - This is the blockchain information. 
+  * Top line is shard 0 bottom is shard 3 in this example.
+  * Verify My Validator Node \#'s match External Harmony Node for Sync status
+* **Uptime** - Your node information: how long it's been booted up, \# of users, cpu load average - lower means less resources in use
+* **Harmony DB Size** - A print out of the size of your databases noted with name to the right of each.
+* **Harmony Version** - A print out of the current version of your harmony application
