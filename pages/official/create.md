@@ -78,6 +78,7 @@ The rest of the commands in the guide show you how to pull other information if 
 Here's the example command given in the office guide below. I'll suggest some updates and give an example command in the following steps.
 
 `Mainnet`
+
 ```bash
 ./hmy --node="https://api.s0.t.hmny.io" staking create-validator \
     --validator-addr [ONE ADDRESS] --amount 10000 \
@@ -90,6 +91,7 @@ Here's the example command given in the office guide below. I'll suggest some up
 
 
 `Testnet`
+
 ```bash
 ./hmy --node="https://api.s0.b.hmny.io" staking create-validator \
     --validator-addr [ONE ADDRESS] --amount 10000 \
@@ -112,8 +114,8 @@ You'll most likely want to setup your logo for the validator. [Here's the Adding
 
 With that in mind, the only extra item we suggest to include is the --identity information. Here's an example with a fake address and information as an example.
 
-{% tabs %}
-{% tab title="Example on Mainnet w/ 1 BLS key" %}
+`Example on Mainnet w/ 1 BLS key`
+
 ```bash
 ./hmy --node="https://api.s0.t.hmny.io" staking create-validator \
     --validator-addr one1rka0v5rct0857f2f*6ahn0cyd89uvravr3yjw --amount 10000 \
@@ -123,8 +125,6 @@ With that in mind, the only extra item we suggest to include is the --identity i
     --max-change-rate 0.1 --max-rate 0.1 --rate 0.1 \
     --max-total-delegation 100000000 --min-self-delegation 10000 --passphrase
 ```
-{% endtab %}
-{% endtabs %}
 
 <Callout>
 Copy the entire command. **Extra white spaces in the command could cause errors.**
