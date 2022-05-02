@@ -19,12 +19,9 @@ If you didn't follow our full [Harmony Validator Companion Guide](../../../befor
 <div className="p-4 border border-gray-200 dark:border-gray-900 rounded mt-6">
 <Callout emoji="⚡">
 **Use these scripts at your own risk.** 
-
-You can verify the curl command still matches the official harmony validator guide on [updating a node using binary](https://docs.harmony.one/home/network/validators/node-setup/installing-updating/upgrading-node/using-binary) before proceeding.  
-  
-Verified working as of 6/22/2021, current version information:  
-  
-Harmony \(C\) 2020. harmony, version v7108-v4.1.8-0-g004a5867 \(runner@ 2021-06-21T23:26:31+0000\)
+<p>You can verify the curl command still matches the official harmony validator guide on [updating a node using binary](https://docs.harmony.one/home/network/validators/node-setup/installing-updating/upgrading-node/using-binary) before proceeding.</p>
+<p>Verified working as of 6/22/2021, current version information:  </p>
+`Harmony \(C\) 2020. harmony, version v7108-v4.1.8-0-g004a5867 \(runner@ 2021-06-21T23:26:31+0000\)`
 </Callout>
 </div>
 
@@ -38,9 +35,8 @@ If you haven't used our guide and you don't have your harmony stuff in a folder,
 
 <div className="p-4 border border-gray-200 dark:border-gray-900 rounded mt-6">
 <Callout emoji="⚡">
-**NOTICE: If you use a custom harmony.conf file you will will want to modify these scripts to not restart the service as you will want to edit your harmony.conf file manually before restarting.**
-
-For users under 10 BLS keys this file can be left at default settings. If you use 10+ BLS keys you will need to update the file and restart your harmony service so modify the script to remove the service restart.
+<p>**NOTICE: If you use a custom harmony.conf file you will will want to modify these scripts to not restart the service as you will want to edit your harmony.conf file manually before restarting.**</p>
+<p>For users under 10 BLS keys this file can be left at default settings. If you use 10+ BLS keys you will need to update the file and restart your harmony service so modify the script to remove the service restart.</p>
 </Callout>
 </div>
 
@@ -107,27 +103,24 @@ chmod +x ~/harmony/upgrade_harmony.sh
 ```
 <div className="p-4 border border-gray-200 dark:border-gray-900 rounded mt-6">
 <Callout emoji="⚠️">
-Here's a breakdown of the commands inside the script we're creating above. 
-
-You may need to update file names and paths to adapt it to your needs. We have 4 customized versions already setup for you to utilize.   
-  
-**Using Full Companion Guide Setup** - Use this if you read our guide and can use this without modification.  
-**Using ~/harmony** - Use this if you didn't use our guide but store your files in ~/harmony  
-**Using ~/ with stats.sh** - Use this if you setup our Stats Script and run your files from your user home folder.  
-**Using ~/** - Use this if you run your files from your user home folder or if you need a barebones script to edit as you need to configure for your system.
-
-A line by line break down of the main tab script:  
-1. Creates a file named ~/harmony/upgrade\_harmony.sh - **Edit location if needed.**  
-2-12. This is the guts of our new script file  
-3. Make a backup folder - **Edit location if needed.**  
-4. Copy your current harmony file into the backup folder - **Edit location if needed.**  
-5. Change to ~/harmony folder - **Edit location if needed.**  
-6. Pull in latest binary file and change to harmony with permissions  
-7. Show current version  
-8. Restart service with new version - **Edit service name if needed.**  
-9. Dump a new configuration - A new configuration is required with each upgrade  
-10. Wait a 10 seconds for harmony to start up fully  
-11. Run our [stats script](stats-script.md#how-do-i-see-what-block-were-on) to pull our stats
+<p>Here's a breakdown of the commands inside the script we're creating above.</p>
+<p>You may need to update file names and paths to adapt it to your needs. We have 4 customized versions already setup for you to utilize.</p>
+- **Using Full Companion Guide Setup** - Use this if you read our guide and can use this without modification.  
+- **Using ~/harmony** - Use this if you didn't use our guide but store your files in ~/harmony  
+- **Using ~/ with stats.sh** - Use this if you setup our Stats Script and run your files from your user home folder.  
+- **Using ~/** - Use this if you run your files from your user home folder or if you need a barebones script to edit as you need to configure for your system.
+> A line by line break down of the main tab script:  
+- 1. Creates a file named ~/harmony/upgrade\_harmony.sh - **Edit location if needed.**  
+- 2-12. This is the guts of our new script file  
+- 3. Make a backup folder - **Edit location if needed.**  
+- 4. Copy your current harmony file into the backup folder - **Edit location if needed.**  
+- 5. Change to ~/harmony folder - **Edit location if needed.**  
+- 6. Pull in latest binary file and change to harmony with permissions  
+- 7. Show current version  
+- 8. Restart service with new version - **Edit service name if needed.**  
+- 9. Dump a new configuration - A new configuration is required with each upgrade  
+- 10. Wait a 10 seconds for harmony to start up fully  
+- 11. Run our [stats script](stats-script.md#how-do-i-see-what-block-were-on) to pull our stats
 </Callout>
 </div>
 #### Modify Permissions
