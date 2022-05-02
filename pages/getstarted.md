@@ -1,0 +1,33 @@
+#### In this subsection we will break down each page of the guide and give our notes on each page
+---
+
+# How to use our Companion Guide
+
+## When to use this guide
+
+### New Validators:
+
+If you're just getting started with setting up a validator node, you will want to open the [Official Harmony Validator Guide](https://docs.harmony.one/home/network/validators) and then start on the section that matches our [Software Setup](../validator-guide-notes/software-setup/) section to the page of the same name in the official harmony documentation.
+
+We suggest reading our notes on their sections, then going through that section of the official guide so you know what to look out for before you read through too much information.
+
+**Update 9/20/2021: Use our new** [**Validator Toolbox Installer**](https://validator-toolbox-guide.easynode.one/) **& Management Application to simplify your node setup and management!**
+
+### Existing Validators:
+
+If you're an existing validator you're probably mostly interested in our Post Node Install section at the end of our guide. Keep in mind the notes in the section below. We encourage people reading our guide to consider using a separate Linux user for the service and using a ~/harmony folder for storing the application.
+
+**Update 9/20/2021: Use our new** [**Validator Toolbox Installer**](https://validator-toolbox-guide.easynode.one/) **& Management Application to simplify your node setup and management!**
+
+### Copy & Pasting Commands From Our Guide
+
+If you're here for an easy setup you won't find one. This guide will help teach you how to administrate your Linux servers.
+
+* Our guide is **not for clicking and pasting commands without understanding and modifying the commands first** 
+* Our guide is for **Ubuntu Linux 18.04LTS/20.04LTS** focused on **Digital Ocean Droplets \(Virtual Servers\)**
+* Our guide encourages people to **set up a user account** to run their service from
+* Our guide encourages people to **use ~/harmony** for their setup and scripts
+* _**Use these commands at your own risk after reviewing and modifying them for your environment.**_
+
+If you're already a node operator but you'd like to review our suggested setup for this guide, please see [this](../before-node-setup/pre-setup-hurdles/user-accounts.md) to peruse our configurations.
+
