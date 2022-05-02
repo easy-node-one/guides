@@ -106,7 +106,7 @@ Here's the example command given in the office guide below. I'll suggest some up
 {% hint style="warning" %}
 Copy the entire command. **Extra white spaces in the command could cause errors.**
 
-Name, identity, details, security-contact and website need to be put in double quotes if there are more than one word separated by space \(example --name "John the validator"\).
+Name, identity, details, security-contact and website need to be put in double quotes if there are more than one word separated by space (example --name "John the validator").
 {% endhint %}
 
 ### Our suggestions
