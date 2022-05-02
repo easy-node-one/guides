@@ -57,8 +57,4 @@ For example, if you'd like to recover your wallet from a mnemonic phrase, run th
 ./hmy keys recover-from-mnemonic [myUserAccount] --passphrase
 ```
 
-{% hint style="warning" %}
- Add your linux user account name in place of [myUserAccount] - We use serviceharmony as our user name.
-{% endhint %}
-
 
