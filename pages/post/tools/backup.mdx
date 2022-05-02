@@ -1,0 +1,22 @@
+#### Our notes on running a 2nd server for redundancy
+---
+
+# "Backup" Node
+
+As we[ noted earlier](../../validator-guide-notes/software-setup/cloud-setup.md#server-requirements):
+
+{% hint style="info" %}
+We recommend keeping your nodes as close to the west coast of USA as possible.  
+  
+Currently we use SFO on Digital Ocean and Silicon Valley on Vultr
+{% endhint %}
+
+### Run another server using the same .key & .pass files as the first
+
+To run a backup node complete the same setup with the following changes:
+
+1. Import your wallet instead of creating one.
+2. Copy your key and pass files over from your other server
+
+One redundant/duplicate "backup" node is enough to cover you for many, many keys.
+
