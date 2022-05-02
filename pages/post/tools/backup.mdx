@@ -1,15 +1,19 @@
+import Callout from 'nextra-theme-docs/callout'
 #### Our notes on running a 2nd server for redundancy
 ---
 
 # "Backup" Node
 
-As we[ noted earlier](../../validator-guide-notes/software-setup/cloud-setup.md#server-requirements):
+As we [noted earlier](../../validator-guide-notes/software-setup/cloud-setup.md#server-requirements):
 
-{% hint style="info" %}
+<div className="p-4 border border-gray-200 dark:border-gray-900 rounded mt-6">
+<Callout emoji="⚠️">
 We recommend keeping your nodes as close to the west coast of USA as possible.  
   
 Currently we use SFO on Digital Ocean and Silicon Valley on Vultr
-{% endhint %}
+</Callout>
+</div>
+
 
 ### Run another server using the same .key & .pass files as the first
 

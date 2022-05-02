@@ -11,8 +11,8 @@ This script is for updating the harmony server you setup with your guide.
 <div className="p-4 border border-gray-200 dark:border-gray-900 rounded mt-6">
 <Callout emoji="⚠️">
 **This is for updating your ~/harmony/harmony application only. For upgrading your operating system see our next page on** [**Ubuntu Updates**](ubuntu-update.md)**.**
-</div>
 </Callout>
+</div>
 
 If you didn't follow our full [Harmony Validator Companion Guide](../../../before-node-setup/being-a-validator/) exactly, you may need to use your Linux administrator skills to modify some of the directories below.
 
@@ -25,8 +25,8 @@ You can verify the curl command still matches the official harmony validator gui
 Verified working as of 6/22/2021, current version information:  
   
 Harmony \(C\) 2020. harmony, version v7108-v4.1.8-0-g004a5867 \(runner@ 2021-06-21T23:26:31+0000\)
-</div>
 </Callout>
+</div>
 
 ### Create an Upgrade Script
 
@@ -41,8 +41,8 @@ If you haven't used our guide and you don't have your harmony stuff in a folder,
 **NOTICE: If you use a custom harmony.conf file you will will want to modify these scripts to not restart the service as you will want to edit your harmony.conf file manually before restarting.**
 
 For users under 10 BLS keys this file can be left at default settings. If you use 10+ BLS keys you will need to update the file and restart your harmony service so modify the script to remove the service restart.
-</div>
 </Callout>
+</div>
 
 > Using Full Companion Guide Setup
 ```text
@@ -128,8 +128,8 @@ A line by line break down of the main tab script:
 9. Dump a new configuration - A new configuration is required with each upgrade  
 10. Wait a 10 seconds for harmony to start up fully  
 11. Run our [stats script](stats-script.md#how-do-i-see-what-block-were-on) to pull our stats
-</div>
 </Callout>
+</div>
 #### Modify Permissions
 > After creating the file you'll need to set it to allow execution with the following command. Pick the tab for your harmony file location.
 > 
