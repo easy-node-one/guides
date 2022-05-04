@@ -63,5 +63,5 @@ export default {
   nextLinks: true,
   footer: true,
   footerEditLink: 'Update me on GitHub',
-  footerText: <>Easy Node {new Date().getFullYear()} © Companion Guide.</>,
+  footerText: <>Easy Node Harmony Community {new Date().getFullYear()} © Companion Guide.</>,
 }
