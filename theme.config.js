@@ -1,7 +1,7 @@
 export default {
   github: 'https://github.com/easy-node-one/companion',
   docsRepositoryBase: 'https://github.com/easy-node-one/companion/blob/master',
-  titleSuffix: ' – Nextra',
+  titleSuffix: ' – EasyNode',
   darkMode: 'true',
   logo: (
     <>
