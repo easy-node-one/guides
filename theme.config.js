@@ -2,6 +2,7 @@ export default {
   github: 'https://github.com/easy-node-one/companion',
   docsRepositoryBase: 'https://github.com/easy-node-one/companion/blob/master',
   titleSuffix: ' – Nextra',
+  darkMode: 'true',
   logo: (
     <>
       <span className="mr-2 font-extrabold hidden md:inline">Easy Node</span>
@@ -61,7 +62,6 @@ export default {
   prevLinks: true,
   nextLinks: true,
   footer: true,
-  footerEditLink: 'Edit this page on GitHub',
-  footerText: <>MIT {new Date().getFullYear()} © Nextra.</>,
-  unstable_faviconGlyph: '👋',
+  footerEditLink: 'Update me on GitHub',
+  footerText: <>Easy Node {new Date().getFullYear()} © Companion Guide.</>,
 }
