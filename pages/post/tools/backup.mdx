@@ -1,17 +1,16 @@
 import Callout from 'nextra-theme-docs/callout'
-#### Our notes on running a 2nd server for redundancy
----
 # "Backup" Node
-> As we [noted earlier](../../validator-guide-notes/software-setup/cloud-setup.md#server-requirements):
+Our notes on running a 2nd server for redundancy
+## Backup Server
+A backup node is no longer recommended by Harmony. Please discontinue having duplicate nodes when possible. You can still have a 2nd server ready to take over but running dual nodes will be disallowed soon.
 <div className="p-4 border border-gray-200 dark:border-gray-900 rounded mt-6">
 <Callout emoji="⚠️">
-    <p>We recommend keeping your nodes as close to the west coast of USA as possible.</p>
-    <p>Currently we use SFO on Digital Ocean and Silicon Valley on Vultr</p>
+    <p>We recommend keeping your nodes as close to the west coast of USA as possible as this is where Harmony runs most servers currently.</p>
 </Callout>
 </div>
-### Run another server using the same .key & .pass files as the first
-> To run a backup node complete the same setup with the following changes:
-> - 1. Import your wallet instead of creating one.
-> - 2. Copy your key and pass files over from your other server
-> One redundant/duplicate "backup" node is enough to cover you for many, many keys.
-
+### So you're going to do it anyways
+## Backup Server Setup
+Run another server using the same .key & .pass files as the first
+To run a backup node complete the same setup with the following changes:
+- Import your wallet instead of creating one.
+- Copy your key and pass files over from your other server
