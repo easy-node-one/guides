@@ -1,5 +1,6 @@
 {
-    "index": "Hardware Requirements",
+    "index": "Official Guide Companion",
+    "hardware": "Hardware Requirements",
     "standard": "Standard Linux Server",
     "rasppi": "Raspberry Pi",
     "setup": "Software Setup",
