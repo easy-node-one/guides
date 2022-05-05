@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function FourOhFour() {
     return (<>
-        <div className="text-center">
+        <div className="text-center flex">
             <h1>Sorry, we moved a LOT of things. Page Not Found</h1><br />
             <Link href="/">
                 <a>
