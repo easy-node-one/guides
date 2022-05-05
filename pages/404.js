@@ -1,13 +1,17 @@
 // 404.js
-import Link from 'next/link'
+import Link from 'next/link';
+import Layout from '@components/Layout';
+
 
 export default function FourOhFour() {
-  return <>
-    <h1>Sorry, we moved a LOT of things. 404 - Page Not Found</h1>
-    <Link href="/">
-      <a>
-        Go back home
-      </a>
-    </Link>
-  </>
+    return <>
+        <Layout>
+            <h1>Sorry, we moved a LOT of things. 404 - Page Not Found</h1>
+            <Link href="/">
+                <a>
+                    Go back home
+                </a>
+            </Link>
+        </Layout>
+    </>
 }
