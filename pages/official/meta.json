@@ -1,11 +1,7 @@
 {
     "index": "Official Guide Companion",
-    "hardware": "Hardware Requirements",
-    "standard": "Standard Linux Server",
-    "rasppi": "Raspberry Pi",
-    "setup": "Software Setup",
+    "setup": "Server Setup",
     "node": "Node Setup",
-    "cloud": "Cloud Setup",
     "create": "Creating A Validator",
     "manage": "Managing A Validator"
 }
