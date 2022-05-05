@@ -7,44 +7,44 @@ If you're doing it "The Easy Node Way" and have already made a folder, always re
 ```text
 cd ~/harmony
 ```
-# HMY CLI Download
-## Download Harmony CLI tool For Linux
+## HMY CLI Download
+#### Download Harmony CLI tool For Linux
 Use the curl command provided to download and install HMY CLI on your Linux OS inside of your ~/harmony folder.
 ```bash
 curl -LO https://harmony.one/hmycli && mv hmycli hmy && chmod +x hmy
 ```
-## Output
+#### Output
 Verify it's installed by running this command.
 ```bash
 ./hmy --node="https://api.s0.t.hmny.io" cookbook
 ```
 The Output is a reference for commands you an perform now with the HMY CLI.
 # Setting up BLS Keys
-## Our notes on BLS keys
+#### Our notes on BLS keys
 We suggest making 10 BLS keys on the shard you start with. Save them to your home PC. They can be reused anytime you deploy that shard again and only need to be created once. Once you have your .key & .pass files save them in a folder at home for reuse via WinSCP, scp, rsync, or however you send files to a server.
 > When you start you won't need more than 1 for quite some time (at least 9.5 million $ONE today) but if you have the others in place you won't need to restart your services and miss blocks to add more keys to your nodes.
-## Creating new BLS keys
+#### Creating new BLS keys
 This covers creation of your BLS Key(s) that you decided on before starting the guide. We encourage you to run one on shards 1-3 instead of just 0.
 > Here you'll be creating the keys, creating a folder, and copying them into the proper folders.
 You may want to store a backup of these files as well.
 ## Syncing with Rclone
 Rclone only needs to be run one time per shard database. It will get your database as close to updated as possible (most likely end of last epoch) and then later _**the harmony service will finish the synchronization before you send your create my validator command**_.
-## 1. Installing Rclone
+#### 1. Installing Rclone
 This section walks you through installing rclone.
-## 2. Configuring Rclone
+#### 2. Configuring Rclone
 This section shows you where your file will be stored and gives you a command to create the file. No changes needed.
-## 3. Running Rclone & 4. Cheat Sheets
+#### 3. Running Rclone & 4. Cheat Sheets
 These sections give you the command to download the databases for the shards you'd like. If you're on shard 1-3 you will have 2 commands to run.
-## Archival Node
+#### Archival Node
 Archival Node can be ignored if you're not setting up an Archival Node (you wouldn't be here for that!).
 ## Installing a Node with Binary
 This is the method you currently want to use. Skip Autonode & Node.sh for you setup. Installation is pretty standard here, no changes just run the curl command to install harmony in your folder.
-## 1. Download Node Binary
+#### 1. Download Node Binary
 Use the command you'd like to install the harmony application. Run this inside your ~/harmony folder.
-## Option 1: Setup Using Config File (recommended)
+#### Option 1: Setup Using Config File (recommended)
 You will want to setup a configuration file to use with your service in the next step. The default configuration file works for 99.9% of administrators.  
 > Most people can skip options 2 & 3 here and go onto setting up harmony as a service with Systemd.
-## 2. Setup Systemd
+## Setup Systemd
 You can create the service as per normal but some configuration changes may be required on this step. You'll want to modify the harmony service file below to meet your installation & configuration needs.
 > To use the setup in nano instead of vi as the guide changes to, run this command instead.
 ```bash
