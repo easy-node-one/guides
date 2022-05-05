@@ -1,0 +1,37 @@
+# Monitoring Nodes
+How we suggest doing basic monitoring when you first get started
+
+Really there's not much monitor on your nodes if everything is up and working.
+## Tools
+Early in our guide we suggested installing some tools. If you have the [Admin Tools](/companion/new/tools) installed you should have MobaXterm all setup and ready to go. If you don't, head over to our Admin Tools section and work on getting yourself setup like a proper developer.
+#### Your new favorite command edit-validator
+You'll be using the edit-validator command a lot so get used to it. Here's the page covering how to use it to make changes to your validator. You should be totally familiar with it at this point but here's a [link to the official guide on how to use it](https://docs.harmony.one/home/network/validators/managing-a-validator/checking-validator-information).
+#### Checking for BINGOs
+One command you'll want to run from time to time on both nodes to verify they are in sync is known as the "BINGO" command around the Harmony community. This command shows you a live view of the end of your log and prints every time it finds a block signature. You won't see this if you are not elected! To check for BINGO run the following command:
+
+```text
+tail -f latest/zerolog-harmony.log | grep BINGO
+```
+
+#### SSH Application - Multiple Connections
+We open 2 connections to each node in Mobaxterm and split the screen 4 ways, here you'll see vwest & vnorth our 2 nodes.
+
+We run htop in the top window to monitor resources. We've noticed after a few days the harmony service starts consuming more CPU usage so we find it helpful to restart it from time to time. This time period varies but once we see the load average stay above 1.0 for awhile we restart the service and on the AMD systems it normally rests between 0.30 ~ 0.50.
+
+In the bottom we can use the terminal for running the [Easy Node stats script](/post/scripts/stats), checking for BINGOs in your logs, sending [edit-validator commands](https://docs.harmony.one/home/network/validators/managing-a-validator/checking-validator-information) to add/remove keys or update information and much more. You can also vote, stake and claim rewards but I won't be covering that here as [it's in the official guide](https://docs.harmony.one/home/network/validators/managing-a-validator/checking-validator-information).
+
+![Example setup of MobaXterm](/cimage_4.png)
+#### Prometheus, Grafina and more monitoring software!
+I'm not onto the advanced monitoring software at this point with only 2 nodes. We may add this information later. It's out there if you crave deep statistics for your node.
+#### Linux Operating System Updates
+You can run Linux OS upgrades from time to time when restarting your node. If you'd like you can also reboot at that point and wait for syncing to come back online before doing the same on your 2nd node.
+
+To run linux updates without rebooting on Ubuntu 20.04 LTS run the following:
+
+```text
+sudo apt-get update && sudo apt-get upgrade -y
+```
+#### I use a Mac to connect!
+
+You can do this with 4 terminal windows. I'm sure there's applications out there for Mac that do the same but I would just use the terminal myself.
+

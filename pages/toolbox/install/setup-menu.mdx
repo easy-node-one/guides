@@ -1,0 +1,72 @@
+# The Setup Menus
+Here's more information about each setup menu along the way!
+## Loading Screen
+![Just our loading screen, first time you run it, the bottom banner will read this.](/image_35.png)
+
+## First run detected!
+![First run, first menu](/image_38.png)
+
+**Start Installer Application**
+Run this option if you are loading a brand new server for the very first time.
+
+**Start Validator Toolbox Menu**
+Run this option if you are loading the toolbox on a server that is already running as a harmony validator node.
+
+## Shard Choice
+![Pick a shard, any shard!](/image_39.png)
+
+Simply pick the shard this node will run on. It's a personal preference, although we suggest looking at the [smart stake site](https://harmony.smartstake.io/election) and determining which shard of 1-3 has the lowest # of keys and using that shard.
+
+## Node Type
+![Pick your node type](/image_33.png)
+
+**Standard Signing Node**
+Known to most as a "Harmony Validator" this option loads a wallet and saves your passphrase in ~/harmony/passphrase.txt
+
+**Full Node Non Validating Dev/RPC**
+Choose this option to load a system that doesn't use a wallet. Mostly used by developers and RPC services
+
+## Testnet or Mainnet
+![Choose testnet or mainnet for your server](/image_34.png)
+
+**Mainnet**
+
+The main Harmony ONE Blockchain for normal operations.
+
+**Testnet**
+
+The Harmony ONE Testnet, use with test tokens. You can [visit our discord community](https://discord.gg/babnYCEZ7Q) if you need test network coins, we have plenty.
+
+## Express Install or Manual Choices
+![Express or Manual?](/image_41.png)
+
+**Express Install**
+
+Assumes you want the kitchen sink for your validator. 
+
+**Manual Approval**
+This lets you choose y/n on every option along the way.
+
+## Password File \(Regular Signing Validator Nodes Only\)
+![Password prompt, enter your wallet password, confirm it to continue](/image_16.png)
+
+Enter a password for your wallet on this node. It's unique to this server
+
+## Recover Wallet \(Regular Signing Validator Nodes Only\)
+![Recover mnemonic phrase into wallet directly](/image_40.png)
+
+Add your mnemonic phrase here directly into the hmy file interface. We do not store or save this information.
+
+**New Users** - If you do not have a wallet yet, press ctrl+c to skip wallet recovery and after installation you can manually create or import a wallet of your choosing.
+
+## Clone Shards
+You will now start cloning your shards. If you choose shard 1-3 that shard will download before shard 0. You can press ctrl+c to cancel downloading of any shard to move past that download.
+
+![Shard 1 Incoming](/image_23.png)
+
+![Shard 0 on the way!](/image_36.png)
+
+## Install completed!
+![Install complete!](/image_17.png)
+
+As mentioned earlier, if you do not have sudoless root access, you will be prompted for a password, which is often several lines up from the bottom of the screen and [sometimes hard to see](/toolbox/post#sudoless-root-skipped---application-install-starts-and-freezes-up).

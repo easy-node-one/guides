@@ -1,0 +1,58 @@
+import Callout from 'nextra-theme-docs/callout'
+
+# What to expect before becoming a validator
+Before you get started on making a validator we'll be covering these things that come up often. Here's a long list of things to read and think about before you proceed with jumping into becoming a validator.
+### How much time does it take to manage a validator?
+When you first start you spend more time watching your validator every 18 hours. As you gain delegations you can learn more and further automate things to free up more time. There are some skills that need to be learned so that may increase the learning curve for some administrators.
+## Linux Administrator Skills
+You'll have to commit to learning how to become a Linux Administrator, keep up with the server admin changes for Harmony and have time to assist your delegators if issues arise.
+<Callout type="warning" emoji="⚠️">
+In reality you should probably already have a few years of Linux systems administrations skills under your belt already if you decide to get into running a validator. It's still possible to learn everything you need to know in a rapid amount of time if you've got computer basics down. Here's some things to be familiar with.
+</Callout>
+Understand every command you run before you execute it and why you are performing it
+- Be familiar with virtual machines and Ubuntu Server
+- Know how to create, manipulate and update files and directories
+- Know how to manage file permissions
+- Know how to create users and manage permissions
+- Know how to manage and modify bash scripts
+- Know how to manage services
+- Know how to read logs and troubleshoot issues that may arise.
+At this point if you're no longer interested any further at running a validator [staking is a wonderful option](https://bit.ly/slugomvalidator) with a lot less work to get a bigger reward than validators make off of fees.
+> If you're familiar with most of this you can skip to the parts you need more info on or go straight to our [Post Install - Pro Tips section](/companion/post).
+If you do not know how to complete the tasks on the list above keep reading before you decide to jump into the life of 18 hour cycles as full time validator.
+## Hardware & Providers
+We'll cover this later, there's a lot of items to become familiar with before you start loading software. Here's some options you'll have to choose from later:
+- Cloud Providers
+- Home Hosted
+    - Linux Servers
+    - Raspberry Pi
+## Operating System
+We use Ubuntu 20.04 LTS only as recommended by Harmony. 
+## Initial Wallet & Funds
+Use a wallet dedicated to your validator. It's best to create a new wallet on your new server to keep things private and secure but you can use any previous wallet as well.
+- At this time you cannot use a hardware wallet to manage your server.
+- You must also import your validator wallet into metamask to vote on snapshot.org. The VDAO is looking into allowing a proxy wallet to vote in the future.
+## Make a local user account
+Decide on the name for a local non-root [user account](/companion/new/users) to run the Harmony application as a service (don't pick root or harmony as the account name). The username should be all lower case. You'll get errors if you're  using capital letters in your username on Ubuntu.
+<Callout type="error" emoji="️🚫">
+Do not run your software as root - it's just a terrible idea. Set up an account and use a folder for the software.
+</Callout>
+## Use a folder for Harmony
+Our [suggested placement](/companion/new/folder) is at ~/harmony and our companion guide has commands to setup the folder before starting your work on the official guide.
+## Create & Use SSH Keys for Login
+Our suggested method of logging into our Linux servers. 
+- Use [this guide](/toolbox/before/ssh-keys "Validator Toolbox Guide SSH Keys") for creating your ssh key pairs for use with Linux servers.
+- Save that guide for later, you will want to use that to install Harmony in the future after you learn all of the commands by hand!
+## Pick your shards
+Decide on your shard setup. We encourage making your BLS keys on any of the numbered shards 1-3 instead of shard 0 at this current time.
+- As of 5/1/2022 - The "snap" database is around 800GB. Plan on 1TB+ for storage as we add 10GB+ per day.
+Loading a 2nd shard requires a 2nd database that currently takes around 18GB.
+## Have enough storage for the future
+Currently you will need around 1TB to get started but plan on 300GB+ a month or more as transactions increase.
+- Harmony compacts the snap database on a regular basis. We will update when they reduce the size.
+## Testnet
+Should I run on Testnet first? If you're new to linux or validating, yes.
+- Harmony has a testnet blockchain running for you to test out validator commands and functions on. We advise setting your first server up there and getting elected. Luckily, the official guide has tabs for all of the commands to use for Testnet vs Mainnet so it's just as easy to setup.
+Keep an eye out for command windows that will have tabs to choose between `Mainnet` or `Testnet`.
+## General Help
+Beyond [our Discord server](https://discord.gg/Rcz5T6D9CV "Easy Node Discord Server Community") If you run into issues during your setup the best place to reach out for help is the [Harmony Mainnet Staking Telegram Channel](https://t.me/PangaeaVolunteers). A team of community volunteers is waiting to assist if you have any questions.

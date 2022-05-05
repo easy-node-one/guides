@@ -1,29 +1,30 @@
 export default {
-  github: 'https://github.com/easy-node-one/companion',
-  docsRepositoryBase: 'https://github.com/easy-node-one/companion/blob/master',
+  github: 'https://github.com/easy-node-one/guides',
+  docsRepositoryBase: 'https://github.com/easy-node-one/guides/blob/master',
   titleSuffix: ' – EasyNode',
   darkMode: 'true',
   logo: (
     <>
       <span className="mr-2 font-extrabold hidden md:inline">Easy Node</span>
       <span className="text-gray-600 font-normal hidden md:inline">
-        Validator Operator Companion Guide
+        Harmony ONE Guides
       </span>
     </>
   ),
+  defaultMenuCollapsed: 'false',
   head: (
     <>
       <meta name="msapplication-TileColor" content="#ffffff" />
       <meta name="theme-color" content="#ffffff" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta httpEquiv="Content-Language" content="en" />
-      <meta name="description" content="Easy Node Harmony ONE Validator Operator Companion Guide" />
-      <meta name="og:description" content="A guide by Easy Node to help people get started with Validating Harmony ONE Protocol" />
+      <meta name="description" content="Easy Node Documentation Repository" />
+      <meta name="og:description" content="The central location for all documentation guides created by Easy Node - Mostly focused on Harmony ONE Protocol Blockchain" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:image" content="https://easynode.one/static/img/ez_node_sq_lg.jpg" />
-      <meta name="twitter:site:domain" content="companion.easynode.one" />
-      <meta name="twitter:url" content="https://companion.easynode.one" />
-      <meta name="og:title" content="Easy Node: Harmony Validator Operator Companion Guide" />
+      <meta name="twitter:site:domain" content="guides.easynode.one" />
+      <meta name="twitter:url" content="https://guides.easynode.one" />
+      <meta name="og:title" content="Easy Node: Documentation Repository" />
       <meta name="og:image" content="https://easynode.one/static/img/ez_node_sq_lg.jpg" />
       <meta name="apple-mobile-web-app-title" content="EasyNode" />
       <link
@@ -63,5 +64,5 @@ export default {
   nextLinks: true,
   footer: true,
   footerEditLink: 'Update me on GitHub',
-  footerText: <>Easy Node Harmony Community {new Date().getFullYear()} © Companion Guide.</>,
+  footerText: <>Easy Node Harmony Community {new Date().getFullYear()} © Documentation Repository.</>,
 }

@@ -1,11 +1,10 @@
 {
   "index": "Welcome",
-  "getstarted": "Get Started",
-  "new": "New Validators",
-  "official": "Official Guide Companion",
-  "post": "Post Install Tips",
-  "rewards": "Rewards",
-  "general": "General Help",
-  "shoutout": "Shout outs!",
+  "easy-node-software": "Easy Node Software",
+  "companion": "New Validators",
+  "toolbox": "Existing Validators",
+  "post": "Post Installation",
+  "shoutout": "Shout outs",
+  "support": "Support Easy Node",
   "updates": "Updates Log"
 }

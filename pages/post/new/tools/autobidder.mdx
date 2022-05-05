@@ -1,0 +1,22 @@
+# Robovalidator Autobidder
+Automatically bid for slots
+
+[Robovalidator](https://www.robovalidator.com/) has an autobidder application. You'll find the github on [this page](https://www.robovalidator.com/). The setup instructions are included in the readme.md file in the repository.
+
+## Installation
+
+The autobidder can be run with the configuration as is on any Shard 0 node along side your ~/harmony folder. You will always get the best response running autobidder on a Shard 0 node.
+
+If you're not running it on a Shard 0 node \(it can be run anywhere hmy is installed in ~/harmony/\) you just need to set the following to True so your node will send requests to the blockchain and depending on traffic may need to increase your gas.
+
+USE\_REMOTE\_NODE = True
+
+## Control and operation
+If you're having troubles launching autobidder and it's failing for the password, try using an empty ~/harmony/passphrase.txt file and see if you get a different result.
+
+We use [VS Code](/companion/new/tools#vs-code) with Remote SSH to manage the files, see our [Admin Tools](/companion/new/tools) post from earlier on that application.
+
+## Support
+
+I don't provide support for this application, join the [harmony staking telegram chat](https://t.me/PangaeaVolunteers) if you have questions.
+

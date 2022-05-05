@@ -1,4 +1,7 @@
 {
-    "index": "About",
-    "tools": "Validator Node Tools"
+  "index": "Usage",
+  "new": "New User Post Install",
+  "existing": "Validator Toolbox",
+  "scripts": "Validator Scripts",
+  "backup": "Running A Backup"
 }
