@@ -16,25 +16,27 @@ Understand every command you run before you execute it and why you are performin
 At this point if you're no longer interested any further at running a validator [staking is a wonderful option](https://bit.ly/slugomvalidator) with a lot less work to get a bigger reward than validators make off of fees.
 > If you're familiar with most of this you can skip to the parts you need more info on or go straight to our [Post Install - Pro Tips section](/post).
 If you do not know how to complete the tasks on the list above keep reading before you decide to jump into the life of 18 hour cycles as full time validator.
-## Cloud Server Provider
-Currently we use OVH.us - Any Bare Metal Provider with the proper requirements is sufficient. Last year we suggested digital ocean and they are still great to learn on but not suitible for mainnet at this time.
-- **You're free to use anyone you'd like** but our guide is written for **Ubuntu 20.04 LTS**.
-- Keep in mind you'll pay a lot more at any of the big 3 providers AWS, Azure or GCP if you run a Harmony Validator Node there and it won't be sustainable without many, many keys and Harmony ONE delegations.
-- See our [Cloud Setup](/official/cloud) section for the requirements.
+## Hardware & Providers
+We'll cover this later, there's a lot of items to become familiar with before you start loading software. Here's some options you'll have to choose from later:
+- Cloud Providers
+- Home Hosted
+    - Linux Servers
+    - Raspberry Pi
 ## Operating System
 We use Ubuntu 20.04 LTS only as recommended by Harmony. 
 ## Initial Wallet & Funds
 Use a wallet dedicated to your validator. It's best to create a new wallet on your new server to keep things private and secure but you can use any previous wallet as well.
 - At this time you cannot use a hardware wallet to manage your server.
 - You must also import your validator wallet into metamask to vote on snapshot.org. The VDAO is looking into allowing a proxy wallet to vote in the future.
-## Making a local [User Account](/new/users)
-Decide on the name for a local non-root account to run the Harmony application as a service \(don't pick root or harmony as the account name\). The username should be all lower case. You'll get errors if you're  using capital letters in your username on Ubuntu.
+## Make a local user account
+Decide on the name for a local non-root [user account](/new/users) to run the Harmony application as a service (don't pick root or harmony as the account name). The username should be all lower case. You'll get errors if you're  using capital letters in your username on Ubuntu.
 - Do not run your software as root - it's just a terrible idea. Set up an account and use a folder for the software.
-## Determine a [Folder Location](/new/folder)
-Our suggested placement is at ~/harmony and our companion guide has commands to setup the folder before starting your work on the official guide.
-## Use [SSH Key Login](https://validator-toolbox-guide.easynode.one/before/ssh-keys)
+## Use a folder for Harmony
+Our [suggested placement](/new/folder) is at ~/harmony and our companion guide has commands to setup the folder before starting your work on the official guide.
+## Create & Use SSH Keys for Login
 Our suggested method of logging into our Linux servers. 
 - Use [this guide](https://validator-toolbox-guide.easynode.one/before/ssh-keys "Validator Toolbox Guide SSH Keys") for creating your ssh key pairs for use with Linux servers.
+- Save that guide for later, you will want to use that to install Harmony in the future after you learn all of the commands by hand!
 ## Pick your shards
 Decide on your shard setup. We encourage making your BLS keys on any of the numbered shards 1-3 instead of shard 0 at this current time.
 - As of 5/1/2022 - The "snap" database is around 800GB. Plan on 1TB+ for storage as we add 10GB+ per day.
