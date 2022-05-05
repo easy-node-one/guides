@@ -3,7 +3,7 @@ How we suggest doing basic monitoring when you first get started
 
 Really there's not much monitor on your nodes if everything is up and working.
 ## Tools
-Early in our guide we suggested installing some tools. If you have the [Admin Tools](/new/tools) installed you should have MobaXterm all setup and ready to go. If you don't, head over to our Admin Tools section and work on getting yourself setup like a proper developer.
+Early in our guide we suggested installing some tools. If you have the [Admin Tools](/companion/new/tools) installed you should have MobaXterm all setup and ready to go. If you don't, head over to our Admin Tools section and work on getting yourself setup like a proper developer.
 #### Your new favorite command edit-validator
 You'll be using the edit-validator command a lot so get used to it. Here's the page covering how to use it to make changes to your validator. You should be totally familiar with it at this point but here's a [link to the official guide on how to use it](https://docs.harmony.one/home/network/validators/managing-a-validator/checking-validator-information).
 #### Checking for BINGOs
@@ -18,7 +18,7 @@ We open 2 connections to each node in Mobaxterm and split the screen 4 ways, her
 
 We run htop in the top window to monitor resources. We've noticed after a few days the harmony service starts consuming more CPU usage so we find it helpful to restart it from time to time. This time period varies but once we see the load average stay above 1.0 for awhile we restart the service and on the AMD systems it normally rests between 0.30 ~ 0.50.
 
-In the bottom we can use the terminal for running the [Easy Node stats script](/post/tools/scripts/stats), checking for BINGOs in your logs, sending [edit-validator commands](https://docs.harmony.one/home/network/validators/managing-a-validator/checking-validator-information) to add/remove keys or update information and much more. You can also vote, stake and claim rewards but I won't be covering that here as [it's in the official guide](https://docs.harmony.one/home/network/validators/managing-a-validator/checking-validator-information).
+In the bottom we can use the terminal for running the [Easy Node stats script](/companion/post/tools/scripts/stats), checking for BINGOs in your logs, sending [edit-validator commands](https://docs.harmony.one/home/network/validators/managing-a-validator/checking-validator-information) to add/remove keys or update information and much more. You can also vote, stake and claim rewards but I won't be covering that here as [it's in the official guide](https://docs.harmony.one/home/network/validators/managing-a-validator/checking-validator-information).
 
 ![Example setup of MobaXterm](/cimage_4.png)
 #### Prometheus, Grafina and more monitoring software!
