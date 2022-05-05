@@ -1,33 +1,41 @@
 # Any Other Provider
 Here's what you need to get done to install validator-toolbox on a brand new Ubuntu 20.04LTS Server that you plan to run as a Harmony ONE Validator.
----
+
 ## Server providers not named Digital Ocean
 Here's what **you need to setup** for our application to run smoothly the first time you want to setup a new node:
-* **Operating System**
-  * Ubuntu 20.04LTS - The suggested operating system from harmony
-* **Account**
-  * Be logged into any user account, **we strongly suggest not using root**.
-  * Best to setup account with sudoless root access for fast management
-  * If you skip this step, you will be prompted for your password during rclone setup but it will be hidden in the menu. If it pauses there type your user account password.
-* **Storage Volume**
-  * Mount your volume to any folder inside of /mnt and we'll detect a single mount point inside of that folder, install harmony in /mnt/yourfolder/harmony and symlink that folder to ~/harmony
+**Operating System**
+- Ubuntu 20.04LTS - The suggested operating system from harmony
+**Account**
+-  Be logged into any user account, **we strongly suggest not using root**.
+-  Best to setup account with sudoless root access for fast management
+-  If you skip this step, you will be prompted for your password during rclone setup but it will be hidden in the menu. If it pauses there type your user account password.
+**Storage Volume**
+-  Mount your volume to any folder inside of /mnt and we'll detect a single mount point inside of that folder, install harmony in /mnt/yourfolder/harmony and symlink that folder to ~/harmony
+
 ## Server Created
 Once your system is online and you are logged in as root with the Server Prep completed, you are ready for Installation!
+
 ## Additional Software
 Any additional software dependencies will be setup as part of our Installation or Quick Installation.
----
+
 ## Sudoless Root Access Setup
 Grant a group sudoless access and add the user or give the user root access directly.
-> As your root account, use the editor of your choice modify the file `/etc/sudoers` as show \(nano example below\):
+
+As your root account, use the editor of your choice modify the file `/etc/sudoers` as show \(nano example below\):
+
 ```text
 sudo nano /etc/sudoers
 ```
-> Inside of the file add a new line with your user account name. We've added `serviceharmony` in our example below:
+
+Inside of the file add a new line with your user account name. We've added `serviceharmony` in our example below:
+
 ```text
 serviceharmony ALL=(ALL) NOPASSWD:ALL
 ```
-> Save the file and exit.
->
-> You'll need to disconnect your account and reconnect before the permissions are enabled. After reconnecting you are ready to run the easy-node-installer Application or validator-toolbox Application.
+
+Save the file and exit.
+
+You'll need to disconnect your account and reconnect before the permissions are enabled. After reconnecting you are ready to run the easy-node-installer Application or validator-toolbox Application.
+
 ## After Installation
 After installation you can remove these settings to run your account normally.
