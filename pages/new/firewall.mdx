@@ -28,9 +28,8 @@ Below is our standard firewall configuration for Validator droplets.
 - **Custom Ports** - 6000 & 9000 - All IPv4, All IPv6 is fine for now. We will be reaching out to determine if these ports can be locked down to specific Harmony related addresses.
 _**You will need to go into Digital Ocean and update the firewall rules if your IP addresses you added to SSH changes for any reason or if you need an additional location authorized**_
 <Callout type="error" emoji="️🚫">
-_**DO NOT OPEN "ALL TCP - TCP - All Ports" OR "SSH - TCP - 22" TO EITHER All IPv4 or All IPv6**_ 
-
-_**If you allow anyone from anywhere on the internet into those ports that makes your server insecure and puts your wallet at risk!**_
+- _**DO NOT OPEN "ALL TCP - TCP - All Ports" OR "SSH - TCP - 22" TO EITHER All IPv4 or All IPv6**_ 
+- _**If you allow anyone from anywhere on the internet into those ports that makes your server insecure and puts your wallet at risk!**_
 </Callout>
 UDP may be used in the future, we're monitoring this. Always stay up to date in the [staking telegram channel](https://t.me/PangaeaVolunteers).
 ## Outbound Rules
