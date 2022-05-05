@@ -4,21 +4,18 @@ Before you get started on making a validator we'll be covering these things that
 When you first start you spend more time watching your validator every 18 hours. As you gain delegations you can learn more and further automate things to free up more time. There are some skills that need to be learned so that may increase the learning curve for some administrators.
 ## Linux Administrator Skills
 You'll have to commit to learning how to become a Linux Administrator, keep up with the server admin changes for Harmony and have time to assist your delegators if issues arise.
-<dl>
-    <dt>In reality you should probably already have a few years of Linux systems administrations skills under your belt already if you decide to get into running a validator. Here's some things to be familiar with.</dt>
-    <dd>Understand every command you run before you execute it and why you are performing it</dd>
-    <dd>Be familiar with virtual machines and Ubuntu Server</dd>
-    <dd>Know how to create, manipulate and update files and directories</dd>
-    <dd>Know how to manage file permissions</dd>
-    <dd>Know how to create users and manage permissions</dd>
-    <dd>Know how to manage and modify bash scripts</dd>
-    <dd>Know how to manage services</dd>
-    <dd>Know how to read logs and troubleshoot issues that may arise.</dd>
-</dl>
+>In reality you should probably already have a few years of Linux systems administrations skills under your belt already if you decide to get into running a validator. Here's some things to be familiar with.</dt>
+Understand every command you run before you execute it and why you are performing it
+- Be familiar with virtual machines and Ubuntu Server
+- Know how to create, manipulate and update files and directories
+- Know how to manage file permissions
+- Know how to create users and manage permissions
+- Know how to manage and modify bash scripts
+- Know how to manage services
+- Know how to read logs and troubleshoot issues that may arise.
 At this point if you're no longer interested any further at running a validator [staking is a wonderful option](https://bit.ly/slugomvalidator) with a lot less work to get a bigger reward than validators make off of fees.
 > If you're familiar with most of this you can skip to the parts you need more info on or go straight to our [Post Install - Pro Tips section](/post).
-> 
-> If you do not know how to complete the tasks on the list above keep reading before you decide to jump into the life of 18 hour cycles as full time validator.
+If you do not know how to complete the tasks on the list above keep reading before you decide to jump into the life of 18 hour cycles as full time validator.
 ## Cloud Server Provider
 Currently we use OVH.us - Any Bare Metal Provider with the proper requirements is sufficient. Last year we suggested digital ocean and they are still great to learn on but not suitible for mainnet at this time.
 - **You're free to use anyone you'd like** but our guide is written for **Ubuntu 20.04 LTS**.
@@ -27,28 +24,27 @@ Currently we use OVH.us - Any Bare Metal Provider with the proper requirements i
 ## Operating System
 We use Ubuntu 20.04 LTS only as recommended by Harmony. 
 ## Initial Wallet & Funds
-    - Use a wallet dedicated to your validator. It's best to create a new wallet on your new server to keep things private and secure but you can use any previous wallet as well.
-    - At this time you cannot use a hardware wallet to manage your server.
-    - You must also import your validator wallet into metamask to vote on snapshot.org. The VDAO is looking into allowing a proxy wallet to vote in the future.
-## Making a local [User Account](../pre-setup-hurdles/user-accounts.md)
-    - Decide on the name for a local non-root account to run the Harmony application as a service \(don't pick root or harmony as the account name\). The username should be all lower case. You'll get errors if you're  using capital letters in your username on Ubuntu.
-    - Do not run your software as root - it's just a terrible idea. Set up an account and use a folder for the software.
-## Determine a [Folder Location](../pre-setup-hurdles/harmony-folder.md#create-harmony-folder)
+Use a wallet dedicated to your validator. It's best to create a new wallet on your new server to keep things private and secure but you can use any previous wallet as well.
+- At this time you cannot use a hardware wallet to manage your server.
+- You must also import your validator wallet into metamask to vote on snapshot.org. The VDAO is looking into allowing a proxy wallet to vote in the future.
+## Making a local [User Account](/new/users)
+Decide on the name for a local non-root account to run the Harmony application as a service \(don't pick root or harmony as the account name\). The username should be all lower case. You'll get errors if you're  using capital letters in your username on Ubuntu.
+- Do not run your software as root - it's just a terrible idea. Set up an account and use a folder for the software.
+## Determine a [Folder Location](/new/folder)
 Our suggested placement is at ~/harmony and our companion guide has commands to setup the folder before starting your work on the official guide.
-## Use [SSH Key Login](../pre-setup-hurdles/user-accounts.md#setup-ssh-key-login-for-new-user)
+## Use [SSH Key Login](https://validator-toolbox-guide.easynode.one/before/ssh-keys)
 Our suggested method of logging into our Linux servers. 
-> [Here is the guide](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-on-ubuntu-20-04) on how to create SSH key pairs, follow it and set them up in the digital ocean interface as well so you can preload it when you login.
+- Use [this guide](https://validator-toolbox-guide.easynode.one/before/ssh-keys "Validator Toolbox Guide SSH Keys") for creating your ssh key pairs for use with Linux servers.
 ## Pick your shards
 Decide on your shard setup. We encourage making your BLS keys on any of the numbered shards 1-3 instead of shard 0 at this current time.
-> ![Current database sizes as of 9/12/2021](../../public/image_22.png)
-Loading a 2nd shard requires a 2nd database that currently takes around 9.3GB.
+- As of 5/1/2022 - The "snap" database is around 800GB. Plan on 1TB+ for storage as we add 10GB+ per day.
+Loading a 2nd shard requires a 2nd database that currently takes around 18GB.
 ## Have enough storage for the future
-Currently you will need around 120GB to get started but plan on 30GB+ a month or more as transactions increase.
-## Wallet for the validator
-Are you using a brand new wallet or recycling? We suggest a separate, secure, new wallet away from the one you use regularly for staking already to avoid mishaps. You'll make a new wallet as part of the official guide if you read it literally but we've set up some commands for importing your mnemonic phrase into your account storage.
+Currently you will need around 1TB to get started but plan on 300GB+ a month or more as transactions increase.
+- Harmony compacts the snap database on a regular basis. We will update when they reduce the size.
 ## Testnet
 Should I run on Testnet first? If you're new to linux or validating, yes.
-> Harmony has a 2nd blockchain running for you to test on. We advise setting  your first server up there and getting elected. Luckily, the official guide has tabs for all of the commands to use for Testnet vs Mainnet so it's just as easy to setup.
-Keep an eye out for command windows that will have tabs to choose between Main or Test.
+- Harmony has a testnet blockchain running for you to test out validator commands and functions on. We advise setting your first server up there and getting elected. Luckily, the official guide has tabs for all of the commands to use for Testnet vs Mainnet so it's just as easy to setup.
+Keep an eye out for command windows that will have tabs to choose between `Mainnet` or `Testnet`.
 ## General Help
 Beyond [our Discord server](https://discord.gg/Rcz5T6D9CV "Easy Node Discord Server Community") If you run into issues during your setup the best place to reach out for help is the [Harmony Mainnet Staking Telegram Channel](https://t.me/PangaeaVolunteers). A team of community volunteers is waiting to assist if you have any questions.
