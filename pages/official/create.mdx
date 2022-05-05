@@ -110,11 +110,14 @@ Here's the example command given in the office guide below. I'll suggest some up
     --max-change-rate 0.1 --max-rate 0.1 --rate 0.1 \
     --max-total-delegation 100000000 --min-self-delegation 10000 --passphrase
 ```
-<div className="p-4 border border-gray-200 dark:border-gray-900 rounded mt-6">
+<Callout type="error" emoji="️🚫">
+  Copy the entire command above and edit it yourself. Extra white spaces in the command could cause errors.
+</Callout>
+<Callout type="error" emoji="️🚫">
+  Decide on your max-change-rate & max-rate before sending your command. These cannot be modified once created.
+</Callout>
 <Callout type="warning" emoji="⚠️">
-  <p>Copy the entire command above and edit it yourself.</p>
-  <p>**Extra white spaces in the command could cause errors.**</p>
-  <p>**Decide on your max-change-rate & max-rate before sending your command. These cannot be modified once created.**</p><br />
+  Here's all of the options you will customize before sending your create command.<br />
   validator-addr - Your Validator wallet with 10001+ coins available to delegate at least 10k.  
   amount - Must be at least 10k. Have extra one available for fees. 1 $ONE is enough currently.  
   bls-pubkeys - Your BLS public key  
@@ -123,8 +126,8 @@ Here's the example command given in the office guide below. I'll suggest some up
   details - The details you want on the validator staking page  
   security-contact - Your email address  
   website - Your website or social media account  
-  <p>**max-change-rate** - Maximum you can adjust your rate in a 24 hour period</p>
-  <p>**max-rate** - Maximum rate you can charge as a fee on your validator</p>
+  max-change-rate - Maximum you can adjust your rate in a 24 hour period
+  max-rate - Maximum rate you can charge as a fee on your validator
   rate - Your current fee rate  
   max-total-delegation - The max $ONE that can be delegated by one single wallet  
   min-self-delegation - Must be at least 10k, you can leave this at 10k.
