@@ -1,58 +1,79 @@
 # First Time Validator Extra Steps
 The next 3 sections need to be completed **after running the toolbox installer** but before running the management menu application.
----
+
 ## Create A Wallet
 You will need a wallet to use for you new validator. We suggest only using your validator wallet for validating and the rewards you get from it to keep your data separate.
+
 #### Creation Options
 Here's a few options for how to create a wallet and how to obtain your mnemonic phrase to restore your password later.
+
 #### Most Secure - Create on your node
 After you run through the toolbox installer, you can create a wallet on your own node by running the following commands.
+
 ```bash
 cd ~/harmony
 ./hmy keys add serviceharmony --passphrase
 ```
-> It will ask for your password twice, and then repeat back your mnemonic phrase. Keep it somewhere safe and secure and never share it with anyone! **You only get one shot at writing down your mnemonic phrase with this option, be very careful and record it properly**
+
+It will ask for your password twice, and then repeat back your mnemonic phrase. Keep it somewhere safe and secure and never share it with anyone! **You only get one shot at writing down your mnemonic phrase with this option, be very careful and record it properly**
+
 #### Most Utility - Harmony Chrome Extension
 Create a new wallet in the [harmony chrome extension](https://chrome.google.com/webstore/detail/harmony-chrome-extension/fnnegphlobjdpkhecapkijjdkgcjhkib). It will force you to record and repeat back your mnemonic phrase. Keep it somewhere safe and secure and never share it with anyone!
+
 ## BLS Keys
 Currently the toolbox doesn't assist with BLS Keys. Support is planned in a future release. Here's the notes from our original guide on BLS Keys.
+
 ## Setting up BLS Keys
 We suggest making 10 BLS keys on the shard you start with. Save them to your home PC. They can be reused anytime you deploy that shard again and only need to be created once. Once you have your .key & .pass files save them in a folder at home for reuse via WinSCP, scp, rsync, or however you send files to a server.
-> When you start you won't need more than 1 for quite some time \(at least 9.5 million $ONE today\) but if you have the others in place you won't need to restart your services and miss blocks to add more keys to your nodes.
+
+When you start you won't need more than 1 for quite some time \(at least 9.5 million $ONE today\) but if you have the others in place you won't need to restart your services and miss blocks to add more keys to your nodes.
+
 ## Creating new BLS keys
-> This covers creation of your BLS Key\(s\) that you decided on before starting the guide. We encourage you to run one on shards 1-3 instead of just 0.
-> 
-> Here you'll be creating the keys, creating a folder, and copying them into the proper folders. You may want to store a backup of these files as well.
-> 
-> To keep things simple, set up a password file before you begin. This will make it easy to copy the password to the required .pass files.
+This covers creation of your BLS Key\(s\) that you decided on before starting the guide. We encourage you to run one on shards 1-3 instead of just 0.
+
+Here you'll be creating the keys, creating a folder, and copying them into the proper folders. You may want to store a backup of these files as well.
+
+To keep things simple, set up a password file before you begin. This will make it easy to copy the password to the required .pass files.
+
 ```s
 cd ~/harmony
 echo -E 'password' > blskey.pass
 ```
-> To create BLS Keys after you've completed the toolbox installation:
+
+To create BLS Keys after you've completed the toolbox installation:
+
 ```s
 ./hmy keys generate-bls-keys --count 10 --shard 1 --passphrase-file blskey.pass
 ```
-> This will create .key files in your ~/harmony directory. Copy those key files to your ~/harmony/.hmy/blskey folder.
+<p>This will create .key files in your ~/harmony directory. Copy those key files to your ~/harmony/.hmy/blskey folder.</p>
 ```s
 cp *.key ~/harmony/.hmy/blskeys
 ```
-> The last step to use your blskey.pass file is to edit your harmony.conf file and setup the path.
+
+The last step to use your blskey.pass file is to edit your harmony.conf file and setup the path.
+
 ```s
 nano ~/harmony/harmony.conf
 ```
-> Change the line `PassFile = []` to read:
+
+Change the line `PassFile = []` to read:
+
 ```s
 PassFile = "./blskey.pass"
 ```
-> Save and exit nano (Ctrl+X y enter)
+
+Save and exit nano (Ctrl+X y enter)
+
 ## Backup your .key and .pass files @ home or in the cloud
-> Using your [admin transfer tool](./../toolbox/before/tools.md) of choice, transfer your .key and .pass files to your home pc and store them securely. The key and pass files are all you need backed up to quickly restore a node. Once you create keys for a shard you can save them and re-use them when needed. They do not need to be created again once you have working copies backed up.
-> 
-> We suggest building a folder that contains a folder for each shard and storing your keys in there.
+Using your [admin transfer tool](/companion/new/tools/) of choice, transfer your .key and .pass files to your home pc and store them securely. The key and pass files are all you need backed up to quickly restore a node. Once you create keys for a shard you can save them and re-use them when needed. They do not need to be created again once you have working copies backed up.
+ 
+We suggest building a folder that contains a folder for each shard and storing your keys in there.
+
 ## Creating a Validator
 Here's the example command given in the office guide below. I'll suggest some updates and give an example command in the following steps.
+
 `Mainnet`
+
 ```bash
 ./hmy --node="https://api.s0.t.hmny.io" staking create-validator \
     --validator-addr [ONE ADDRESS] --amount 10000 \
@@ -62,7 +83,9 @@ Here's the example command given in the office guide below. I'll suggest some up
     --max-change-rate 0.1 --max-rate 0.1 --rate 0.1 \
     --max-total-delegation 100000000 --min-self-delegation 10000 --passphrase --gas-price 30
 ```
+
 `Testnet`
+
 ```bash
 ./hmy --node="https://api.s0.b.hmny.io" staking create-validator \
     --validator-addr [ONE ADDRESS] --amount 10000 \
@@ -72,12 +95,16 @@ Here's the example command given in the office guide below. I'll suggest some up
     --max-change-rate 0.1 --max-rate 0.1 --rate 0.1 \
     --max-total-delegation 100000000 --min-self-delegation 10000 --passphrase --gas-price 30
 ```
+
 **Copy the entire command. Extra white spaces in the command could cause errors.**
-> Name, identity, details, security-contact and website need to be put in double quotes if there are more than one word separated by space \(example --name "John the validator"\).
+
+Name, identity, details, security-contact and website need to be put in double quotes if there are more than one word separated by space \(example --name "John the validator"\).
+
 ## Our suggestions
-> You want to setup your logo for the validator. [Here's the Adding A Validator Logo](https://docs.harmony.one/home/network/validators/managing-a-validator/adding-a-validator-logo) section of the official guide that will get you set up with an identity string. We suggest including the identity string in your create-validator command.
-> 
-> With that in mind, the only extra item we suggest to include is the --identity information. Here's an example with a fake address and information as an example.
+You want to setup your logo for the validator. [Here's the Adding A Validator Logo](https://docs.harmony.one/home/network/validators/managing-a-validator/adding-a-validator-logo) section of the official guide that will get you set up with an identity string. We suggest including the identity string in your create-validator command.
+ 
+With that in mind, the only extra item we suggest to include is the --identity information. Here's an example with a fake address and information as an example.
+
 ```bash
 ./hmy --node="https://api.s0.t.hmny.io" staking create-validator \
     --validator-addr one1rka0v5rct0857f2f*6ahn0cyd89uvravr3yjw --amount 10000 \
@@ -87,6 +114,7 @@ Here's the example command given in the office guide below. I'll suggest some up
     --max-change-rate 0.1 --max-rate 0.1 --rate 0.1 \
     --max-total-delegation 100000000 --min-self-delegation 10000 --passphrase --gas-price 30
 ```
+
 ## All of the options explained
 **Decide on your max-change-rate & max-rate before sending your command. These cannot be modified once created.**
     - validator-addr - Your Validator wallet with 10001+ coins available to delegate at least 10k.  
