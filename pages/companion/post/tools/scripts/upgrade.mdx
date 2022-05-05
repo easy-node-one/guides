@@ -10,7 +10,7 @@ This script is for updating the harmony server you setup with your guide.
 **This is for updating your ~/harmony/harmony application only. For upgrading your operating system see our next page on** [**Ubuntu Updates**](ubuntu-update.md)**.**
 </Callout>
 
-If you didn't follow our full [Harmony Validator Companion Guide](../../../before-node-setup/being-a-validator/) exactly, you may need to use your Linux administrator skills to modify some of the directories below.
+If you didn't follow our full [Harmony Validator Companion Guide](/companion/new/) exactly, you may need to use your Linux administrator skills to modify some of the directories below.
 
 <Callout emoji="ℹ️">
 **Use these scripts at your own risk.** 
@@ -23,7 +23,7 @@ If you didn't follow our full [Harmony Validator Companion Guide](../../../befor
 
 Choose one of the 4 tabs below **depending on how you setup the folder structure on your system**. Copy and paste the contents into your console inside the directory with harmony. 
 
-If you've set up your node fully using our guide and have your stuff in ~/harmony you can skip to here to just [pull upgrade\_harmony.sh onto your node](upgrade-script.md#pull-upgrade_harmony-sh-script-onto-your-node) without any further customizations.
+If you've set up your node fully using our guide and have your stuff in ~/harmony you can skip to here to just [pull upgrade\_harmony.sh onto your node](/companion/post/tools/scripts/upgrade#pull-upgradeharmonysh-script-onto-your-node) without any further customizations.
 
 If you haven't used our guide and you don't have your harmony stuff in a folder, we cover 4 different possible setups below:
 
@@ -113,17 +113,17 @@ You may need to update file names and paths to adapt it to your needs. We have 4
 </Callout>
 
 A line by line break down of the main tab script:  
-- 1. Creates a file named ~/harmony/upgrade\_harmony.sh - **Edit location if needed.**  
-- 2. lines 2-12 This is the guts of our new script file  
-- 3. Make a backup folder - **Edit location if needed.**  
-- 4. Copy your current harmony file into the backup folder - **Edit location if needed.**  
-- 5. Change to ~/harmony folder - **Edit location if needed.**  
-- 6. Pull in latest binary file and change to harmony with permissions  
-- 7. Show current version  
-- 8. Restart service with new version - **Edit service name if needed.**  
-- 9. Dump a new configuration - A new configuration is required with each upgrade  
-- 10. Wait a 10 seconds for harmony to start up fully  
-- 11. Run our [stats script](stats-script.md#how-do-i-see-what-block-were-on) to pull our stats
+1. Creates a file named ~/harmony/upgrade\_harmony.sh **Edit location if needed.**  
+2. lines 2-12 This is the guts of our new script file  
+3. Make a backup folder **Edit location if needed.**  
+4. Copy your current harmony file into the backup folder **Edit location if needed.**  
+5. Change to ~/harmony folder **Edit location if needed.**  
+6. Pull in latest binary file and change to harmony with permissions  
+7. Show current version  
+8. Restart service with new version **Edit service name if needed.**  
+9. Dump a new configuration - A new configuration is required with each upgrade  
+10. Wait a 10 seconds for harmony to start up fully  
+11. Run our [stats script](stats-script.md#how-do-i-see-what-block-were-on) to pull our stats
 
 
 #### Modify Permissions
