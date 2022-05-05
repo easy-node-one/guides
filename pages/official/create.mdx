@@ -1,10 +1,15 @@
 import Callout from 'nextra-theme-docs/callout'
 
-# Creating A Validator
-## 1. Creating a new validator wallet
-> This section will walk you through making a brand new wallet. If that's what you'd like to do you can follow that. 
-### Another Option - Using an existing wallet instead
-> You can also import an existing wallet in a variety of ways. Take a look at the output of the command `./hmy keys` below to see your options.
+# Creating a Validator
+Before you can create a validator on the blockchain you need a fresh wallet to use for your validator account.
+
+## Creating a new validator wallet
+This section will walk you through making a brand new wallet. If that's what you'd like to do you can follow that. 
+
+#### Option B: Using an existing wallet instead
+<Callout emoji="ℹ️">
+You can also import an existing wallet in a variety of ways. Take a look at the output of the command `./hmy keys` below to see your options.
+</Callout>
 ```text
 ./hmy keys
 Manage your local keys
@@ -44,24 +49,25 @@ Global Flags:
 
 Use "hmy keys [command] --help" for more information about a command.
 ```
-> For example, if you'd like to recover your wallet from a mnemonic phrase, run the following command.
+
+For example, if you'd like to recover your wallet from a mnemonic phrase, run the following command.
+
 ```text
 ./hmy keys recover-from-mnemonic [myUserAccount] --passphrase
 ```
-<div className="p-4 border border-gray-200 dark:border-gray-900 rounded mt-6">
-<Callout emoji="⚠️">
+
+<Callout emoji="ℹ️">
   Add your linux user account name in place of [myUserAccount] - We use serviceharmony as our user name.
 </Callout>
-</div>
-> You can also replace recover-from-mnemonic with the importing option of your choice on the list above.
->
-> After you've created a wallet or imported an existing wallet successfully you can view your registered validator wallet address with the following command.
+
+You can also replace recover-from-mnemonic with the importing option of your choice on the list above.
+
+After you've created a wallet or imported an existing wallet successfully you can view your registered validator wallet address with the following command.
+
 ```text
 ./hmy keys list
 ```
-### Checking your information
-> The rest of the commands in the guide show you how to pull other information if necessary.
-## 2. Creating a Validator
+## Creating a Validator
 > Here's the example command given in the office guide below. I'll suggest some updates and give an example command in the following steps.
 #### Mainnet
 ```bash
@@ -116,8 +122,8 @@ Use "hmy keys [command] --help" for more information about a command.
   details - The details you want on the validator staking page  
   security-contact - Your email address  
   website - Your website or social media account  
-  **max-change-rate** - Maximum you can adjust your rate in a 24 hour period  
-  **max-rate** - Maximum rate you can charge as a fee on your validator  
+  <p>**max-change-rate** - Maximum you can adjust your rate in a 24 hour period</p>
+  <p>**max-rate** - Maximum rate you can charge as a fee on your validator</p>
   rate - Your current fee rate  
   max-total-delegation - The max $ONE that can be delegated by one single wallet  
   min-self-delegation - Must be at least 10k, you can leave this at 10k.
