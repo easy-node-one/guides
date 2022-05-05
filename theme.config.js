@@ -11,7 +11,7 @@ export default {
       </span>
     </>
   ),
-  defaultMenuCollapsed: 'false',
+  defaultMenuCollapsed: 'true',
   head: (
     <>
       <meta name="msapplication-TileColor" content="#ffffff" />
