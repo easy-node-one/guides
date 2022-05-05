@@ -1,22 +1,14 @@
-#### Here's how to run your Ubuntu Updates
----
-
 # Ubuntu Operating System Updates
+Here's how to run your Ubuntu Updates
 
 You can run updates while the harmony service is operating.
-
 ## Updating Ubuntu 20.04 LTS
-
 To run Ubuntu updates run the following command string - This will update your repo, pull in upgrade and dist-upgrades and cleanup any leftover unused packages.
-
 ```text
 sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y && sudo apt autoremove -y
 ```
-
 Once completed you're up to date.
-
-### Should we reboot?
-
+#### Should we reboot?
 The unofficial motto of Linux is Never Reboot, so you probably don't have to unless you want to change Kernels. No need for that at this point if you don't want to upgrade.
 
 However, if you'd like to stop your node from signing and reboot you can run the following command to upgrade Ubuntu and restart all in one command.
@@ -28,4 +20,3 @@ sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y &
 Server will automatically restart and you'll need to reconnect any open terminal sessions.
 
 Any tmux sessions will also need to be restarted after a reboot.
-
