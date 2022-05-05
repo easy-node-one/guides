@@ -18,7 +18,7 @@ export default {
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta httpEquiv="Content-Language" content="en" />
       <meta name="description" content="Easy Node Harmony ONE Validator Operator Companion Guide" />
-      <meta name="og:description" content="Easy Node: Harmony Validator Operator Companion Guide" />
+      <meta name="og:description" content="A guide by Easy Node to help people get started with Validating Harmony ONE Protocol" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:image" content="https://easynode.one/static/img/ez_node_sq_lg.jpg" />
       <meta name="twitter:site:domain" content="companion.easynode.one" />
