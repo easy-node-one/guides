@@ -68,8 +68,9 @@ After you've created a wallet or imported an existing wallet successfully you ca
 ./hmy keys list
 ```
 ## Creating a Validator
-> Here's the example command given in the office guide below. I'll suggest some updates and give an example command in the following steps.
-#### Mainnet
+Here's the example command given in the office guide below. I'll suggest some updates and give an example command in the following steps.
+
+### Mainnet
 ```bash
 ./hmy --node="https://api.s0.t.hmny.io" staking create-validator \
     --validator-addr [ONE ADDRESS] --amount 10000 \
@@ -79,7 +80,8 @@ After you've created a wallet or imported an existing wallet successfully you ca
     --max-change-rate 0.1 --max-rate 0.1 --rate 0.1 \
     --max-total-delegation 100000000 --min-self-delegation 10000 --passphrase
 ```
-#### Testnet
+
+### Testnet
 ```bash
 ./hmy --node="https://api.s0.b.hmny.io" staking create-validator \
     --validator-addr [ONE ADDRESS] --amount 10000 \
@@ -89,8 +91,7 @@ After you've created a wallet or imported an existing wallet successfully you ca
     --max-change-rate 0.1 --max-rate 0.1 --rate 0.1 \
     --max-total-delegation 100000000 --min-self-delegation 10000 --passphrase
 ```
-<div className="p-4 border border-gray-200 dark:border-gray-900 rounded mt-6">
-<Callout emoji="⚠️">
+<Callout type="warning" emoji="⚠️">
   Copy the entire command. **Extra white spaces in the command could cause errors.**
   Name, identity, details, security-contact and website need to be put in double quotes if there are more than one word separated by space (example --name "John the validator").
 </Callout>
@@ -110,7 +111,7 @@ After you've created a wallet or imported an existing wallet successfully you ca
     --max-total-delegation 100000000 --min-self-delegation 10000 --passphrase
 ```
 <div className="p-4 border border-gray-200 dark:border-gray-900 rounded mt-6">
-<Callout emoji="⚠️">
+<Callout type="warning" emoji="⚠️">
   <p>Copy the entire command above and edit it yourself.</p>
   <p>**Extra white spaces in the command could cause errors.**</p>
   <p>**Decide on your max-change-rate & max-rate before sending your command. These cannot be modified once created.**</p><br />
