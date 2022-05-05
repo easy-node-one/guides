@@ -4,6 +4,5 @@
   "quick-install": "Quick Install",
   "before": "Before Starting Validation",
   "prep": "Required Server Prep",
-  "install": "Installation",
-  "post": "Post Installation"
+  "install": "Installation"
 }
