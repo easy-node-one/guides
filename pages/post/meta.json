@@ -2,5 +2,6 @@
   "index": "Usage",
   "new": "New User Post Installation Information",
   "existing": "Validator Toolbox",
-  "scripts": "Validator Scripts"
+  "scripts": "Validator Scripts",
+  "backup": "Running A Backup"
 }
