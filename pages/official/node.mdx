@@ -1,8 +1,12 @@
+import Callout from 'nextra-theme-docs/callout'
+
 # Node Setup
 Notes on the node setup section
 ## Setup
 Remember to read our [Before I Set a Validator Up]/new/index.mdx) section and make a plan before starting here. You'll want to have a non-root user account (with sudo access to run root commands is ok!) created and the ~/harmony directory setup.
-> We won't cover multiple BLS Keys here as they aren't needed to get started. Make one and add one to start (worry about BLS keys when we get there).
+<Callout emoji="ℹ️">
+We won't cover multiple BLS Keys here as they aren't needed to get started. Make one and add one to start (worry about BLS keys when we get there).
+</Callout>
 If you're doing it "The Easy Node Way" and have already made a folder, always remember to change into your harmony directory before running commands!
 ```text
 cd ~/harmony
@@ -22,10 +26,14 @@ The Output is a reference for commands you an perform now with the HMY CLI.
 # Setting up BLS Keys
 #### Our notes on BLS keys
 We suggest making 10 BLS keys on the shard you start with. Save them to your home PC. They can be reused anytime you deploy that shard again and only need to be created once. Once you have your .key & .pass files save them in a folder at home for reuse via WinSCP, scp, rsync, or however you send files to a server.
-> When you start you won't need more than 1 for quite some time (at least 9.5 million $ONE today) but if you have the others in place you won't need to restart your services and miss blocks to add more keys to your nodes.
+<Callout emoji="ℹ️">
+When you start you won't need more than 1 for quite some time (at least 9.5 million $ONE today) but if you have the others in place you won't need to restart your services and miss blocks to add more keys to your nodes.
+</Callout>
 #### Creating new BLS keys
 This covers creation of your BLS Key(s) that you decided on before starting the guide. We encourage you to run one on shards 1-3 instead of just 0.
-> Here you'll be creating the keys, creating a folder, and copying them into the proper folders.
+<Callout emoji="ℹ️">
+Here you'll be creating the keys, creating a folder, and copying them into the proper folders.
+</Callout>
 You may want to store a backup of these files as well.
 ## Syncing with Rclone
 Rclone only needs to be run one time per shard database. It will get your database as close to updated as possible (most likely end of last epoch) and then later _**the harmony service will finish the synchronization before you send your create my validator command**_.
@@ -43,10 +51,14 @@ This is the method you currently want to use. Skip Autonode & Node.sh for you se
 Use the command you'd like to install the harmony application. Run this inside your ~/harmony folder.
 #### Option 1: Setup Using Config File (recommended)
 You will want to setup a configuration file to use with your service in the next step. The default configuration file works for 99.9% of administrators.  
-> Most people can skip options 2 & 3 here and go onto setting up harmony as a service with Systemd.
+<Callout emoji="ℹ️">
+Most people can skip options 2 & 3 here and go onto setting up harmony as a service with Systemd.
+</Callout>
 ## Setup Systemd
 You can create the service as per normal but some configuration changes may be required on this step. You'll want to modify the harmony service file below to meet your installation & configuration needs.
-> To use the setup in nano instead of vi as the guide changes to, run this command instead.
+<Callout emoji="ℹ️">
+To use the setup in nano instead of vi as the guide changes to, run this command instead.
+</Callout>
 ```bash
 sudo nano /etc/systemd/system/harmony.service
 ```
@@ -75,9 +87,13 @@ LimitNPROC=65536
 [Install]
 WantedBy=multi-user.target
 ```
-> Add your user account name in place of [myUserName] in the commands in this guide.
+<Callout emoji="ℹ️">
+    Add your user account name in place of [myUserName] in the commands in this guide.
+</Callout>
 At this point you can continue with the rest of the regular [Official Harmony Guide](https://docs.harmony.one/home/network/validators/node-setup/installing-updating/installing-node/using-binary#2-setup-systemd).
-> When you run the 3 commands after you edit the above & create the systemd file you may get an error if you check your service as you haven't loaded a wallet yet. In the next section you'll create or add an existing wallet as your official validator address.
+<Callout emoji="ℹ️">
+When you run the 3 commands after you edit the above & create the systemd file you may get an error if you check your service as you haven't loaded a wallet yet. In the next section you'll create or add an existing wallet as your official validator address.
+</Callout>
 ## Updating a Node
 You won't need to update a node at this point. However when you're ready to upgrade see our [Upgrade Script](/post/tools/scripts/upgrade) section if you'd like to script the upgrade process.
 ## Checking a Node
