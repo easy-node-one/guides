@@ -1,6 +1,6 @@
 export default {
-  github: 'https://github.com/easy-node-one/companion',
-  docsRepositoryBase: 'https://github.com/easy-node-one/companion/blob/master',
+  github: 'https://github.com/easy-node-one/guides',
+  docsRepositoryBase: 'https://github.com/easy-node-one/guides/blob/master',
   titleSuffix: ' – EasyNode',
   darkMode: 'true',
   logo: (
@@ -22,8 +22,8 @@ export default {
       <meta name="og:description" content="The central location for all documentation guides created by Easy Node - Mostly focused on Harmony ONE Protocol Blockchain" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:image" content="https://easynode.one/static/img/ez_node_sq_lg.jpg" />
-      <meta name="twitter:site:domain" content="companion.easynode.one" />
-      <meta name="twitter:url" content="https://companion.easynode.one" />
+      <meta name="twitter:site:domain" content="guides.easynode.one" />
+      <meta name="twitter:url" content="https://guides.easynode.one" />
       <meta name="og:title" content="Easy Node: Documentation Repository" />
       <meta name="og:image" content="https://easynode.one/static/img/ez_node_sq_lg.jpg" />
       <meta name="apple-mobile-web-app-title" content="EasyNode" />
@@ -64,5 +64,5 @@ export default {
   nextLinks: true,
   footer: true,
   footerEditLink: 'Update me on GitHub',
-  footerText: <>Easy Node Harmony Community {new Date().getFullYear()} © Companion Guide.</>,
+  footerText: <>Easy Node Harmony Community {new Date().getFullYear()} © Documentation Repository.</>,
 }
