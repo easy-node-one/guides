@@ -7,7 +7,7 @@ export default {
     <>
       <span className="mr-2 font-extrabold hidden md:inline">Easy Node</span>
       <span className="text-gray-600 font-normal hidden md:inline">
-        Documentation Repository
+        Harmony ONE Guides
       </span>
     </>
   ),
