@@ -10,17 +10,14 @@ For your firewall we only suggest opening up the minimum required ports publicly
 
 ## Digital Ocean Firewall Config
 If you use Digital Ocean Networking Firewall continue reading.
-
 - You can [visit this website](https://www.whatismyip.com/) to get the IP you're currently using on the public internet.
 
 ## Digital Ocean Networking Firewall Setup
 Digital Ocean Networking Firewall
-
 - If you're on Digital Ocean their firewall is much more user friendly than UFW or an alternative. Here's our notes on using the Digital Ocean Firewalls.
 
 ## Inbound Rules
 Below is our standard firewall configuration for Validator droplets.
-
 ![Digital Ocean &amp;gt; Networking &amp;gt; Firewalls](/image_11.png)
 
 - **All TCP** - 127.0.0.1 - This address is the local host IP, it allows the droplets to use their ports. No other IPs in this field.
@@ -36,5 +33,4 @@ _**If you allow anyone from anywhere on the internet into those ports that makes
 UDP may be used in the future, we're monitoring this. Always stay up to date in the [staking telegram channel](https://t.me/PangaeaVolunteers).
 ## Outbound Rules
 These can be left as default.
-
 ![Default Outbound Rules on Digital Ocean](/image_19.png)
