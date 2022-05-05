@@ -1,11 +1,9 @@
 {
   "index": "Introduction",
   "easy-node-software": "Easy Node Software",
-  "support-easy-node": "Support Easy Node",
   "quick-install": "Quick Install",
   "before": "Before Starting Validation",
   "prep": "Required Server Prep",
   "install": "Installation",
-  "post": "Post Installation",
-  "later": "Future Updates"
+  "post": "Post Installation"
 }
