@@ -1,0 +1,37 @@
+# Server or Provider of Servers
+---
+One of the first steps is deciding where to run your servers. The requirements from Harmony are below but beware disk storage expands fast currently and we now suggest using 8+ dedicated CPUs + 850GB for storage on any provider.
+## Hardware/Cloud Server Requirements
+Review the current [hardware requirements here](https://docs.harmony.one/home/network/validators/server-setup/requirements).
+## Hardware Suggestions
+    - CPU: 8+ dedicated cores is recommended
+    - Memory: 16GB+ recommended
+    - Storage: Currently 2TB+ NvME, as of 5.1.2022 database already 800GB+ and growing. Plan for the future.
+    - OS: Ubuntu 20.04LTS Linux
+    - Network: 1GBPS+ bandwidth, 5~6 TB data usage per month (preferably more if possible)
+## Cost
+> Most providers average around $125/mo per server to have sufficient CPUs and storage for Harmony Validator Software & Databases.
+## Self Stake
+> 10001 Harmony $ONE will need to be provided to the wallet you choose to use for your validator when you get to that step in the process.
+## Cloud Providers
+> There's unlimited options on who to rent a server from. We've tried many, we suggest the following if you're looking for a cloud hosted server.
+>
+>   * Sign up on [Digital Ocean](https://m.do.co/c/b761e5fdd694) and get $100 for your first 2 months fees - You can sign up before creating servers to lock in your account.
+>   * [Vultr](https://www.vultr.com/?ref=8873853) - A good option as well for a 2nd server on a different provider for redundancy
+>   * OVH.us
+>   * OVH Europe
+>   * Hetzner
+Other Providers, server purchase required to sign up:
+>   * [OVHCloud ](https://us.ovhcloud.com/) \(USA\) - We use a bare metal server ADV-2 from OVH for our workhorse backbone server, make sure you get 1Gbps speed + or you may have signing issues
+>   * [OVH.com](https://www.ovh.com/world/) \(Outside USA\) - Several have reported good servers from OVH
+>   * [Hetzner.com](https://www.hetzner.com/cloud) - Several have reported good servers from Hetzner
+Got suggestions? Stop by our [discord chat](https://discord.gg/Rcz5T6D9CV) and let us know who to check out!
+## Why Digital Ocean
+> There's many reasons but mostly how easy they are to use, the reliability, the cost, and the free $100 to learn with just for signing up. However, Digital Ocean servers can no longer keep up with the growing demand of resources in Harmony ONE. Consider learning on a Digital Ocean server but finding a Bare Metal Provider before you become elected.
+**Benefits of using Digital Ocean:**
+>   * $100 in free credit. You're gonna need it if you aren't rich.
+>   * Website is super easy to use to create servers & setup your firewall
+>   * Volumes
+>     1. Since Harmony's data size has grown volumes help keep costs down
+>     2. They can be expanded live, on the fly, without shutting off harmony
+>     3. Don't spend too much extra cash on storage

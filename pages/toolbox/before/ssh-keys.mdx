@@ -1,0 +1,15 @@
+# SSH Keys
+Creating Private & Public Key Pairs
+## Use SSH Keys for SSH Login
+How to further secure your server with passwordless login via SSH private & public keys for your VPS provider & Github
+- If you're using a cloud service for a provider you are most always prompted to upload your public key for the service provider to install on your new server - or droplet if it's [Digital Ocean](https://m.do.co/c/b761e5fdd694).
+Disabling password logins on your server and only using SSH keys is a great way to harden the security of your node. With proper firewall configuration and SSH keys you can seriously lock down the security and make it virtually impossible for attackers to get into your node.
+## Create your key pairs
+We suggest running the following command in Linux or Windows 10 powershell to generate an SSH public & private key pair on your system. After running the command you will be asked a series of questions. If this is your first time running the command it's ok to just hit enter and use defaults for all of these. If you would like to add a password to your key you can but it's not required and will prompt you every time you use it if a password is applied.
+```bash
+ssh-keygen -t rsa -b 4096
+```
+[ssh photo](/image_6.png)
+This will create the files id_rsa & id_rsa.pub in your user's home directory in the ~/.ssh folder. On Windows it goes into C:\users\your_username\$.ssh folder.
+- If you head over to your provider's website, you will be able to upload the contents of your id_rsa.pub folder into the security section of your account. Find the area to add an SSH key, give it a label (usually the PC you made the key on so you know where it lives) and paste the entire contents of your id_rsa.pub file into the box. Press save and you'll now have the key ready to load when creating a new server on that service provider.
+- This is also a great time to create a github account and upload your public key to the settings section of that account as well. As a validator operator you'll find yourself using github often and SSH access is the best. It also sets up your public key for anyone to use to give you access to servers. You can find your key by modifying the username at the end of this url, here's [Our Keys](https://github.com/patrickmogul.keys) on github.
