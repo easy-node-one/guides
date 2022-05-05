@@ -1,0 +1,23 @@
+# Installation Guide
+Here's the steps to installation! The validatortoolbox application can be installed on existing nodes to utilize the management menu along with running on brand new servers to setup the Harmony Validator software.
+---
+## **First Step**
+Install dependencies then clone our Github repository while inside your home folder**.** Log into your new server as the user account you created. From the home folder of your non-root user account clone our repository using the HTTPS or SSH commands below:
+```text
+sudo apt-get install dnsutils git python3-pip python3-dotenv unzip -y
+cd ~/
+git clone https://github.com/easy-node-one/validatortoolbox.git
+```
+## **Install requirements for the validatortoolbox application**
+To get all of the requirements installed for validator-toolbox run the following code:
+```text
+cd ~/validatortoolbox
+pip3 install -r requirements.txt
+```
+## **Start the Harmony ONE Validator Node Installer**
+If this is the first time the validatortoolbox is run on a brand new node we will install the Harmony ONE Validator Software for you! 
+> On the first run on a new or existing node our menu will ask you some questions about your preferences to help build our catalogue.
+To launch the installer or the interface menu simply run:
+```text
+python3 ~/validatortoolbox/toolbox/start.py
+```
