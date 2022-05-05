@@ -1,10 +1,14 @@
+import Callout from 'nextra-theme-docs/callout'
+
 # What to expect before becoming a validator
 Before you get started on making a validator we'll be covering these things that come up often. Here's a long list of things to read and think about before you proceed with jumping into becoming a validator.
 ### How much time does it take to manage a validator?
 When you first start you spend more time watching your validator every 18 hours. As you gain delegations you can learn more and further automate things to free up more time. There are some skills that need to be learned so that may increase the learning curve for some administrators.
 ## Linux Administrator Skills
 You'll have to commit to learning how to become a Linux Administrator, keep up with the server admin changes for Harmony and have time to assist your delegators if issues arise.
->In reality you should probably already have a few years of Linux systems administrations skills under your belt already if you decide to get into running a validator. Here's some things to be familiar with.
+<Callout type="warning" emoji="⚠️">
+In reality you should probably already have a few years of Linux systems administrations skills under your belt already if you decide to get into running a validator. It's still possible to learn everything you need to know in a rapid amount of time if you've got computer basics down. Here's some things to be familiar with.
+</Callout>
 Understand every command you run before you execute it and why you are performing it
 - Be familiar with virtual machines and Ubuntu Server
 - Know how to create, manipulate and update files and directories
@@ -30,7 +34,9 @@ Use a wallet dedicated to your validator. It's best to create a new wallet on yo
 - You must also import your validator wallet into metamask to vote on snapshot.org. The VDAO is looking into allowing a proxy wallet to vote in the future.
 ## Make a local user account
 Decide on the name for a local non-root [user account](/new/users) to run the Harmony application as a service (don't pick root or harmony as the account name). The username should be all lower case. You'll get errors if you're  using capital letters in your username on Ubuntu.
-- Do not run your software as root - it's just a terrible idea. Set up an account and use a folder for the software.
+<Callout type="error" emoji="️🚫">
+Do not run your software as root - it's just a terrible idea. Set up an account and use a folder for the software.
+</Callout>
 ## Use a folder for Harmony
 Our [suggested placement](/new/folder) is at ~/harmony and our companion guide has commands to setup the folder before starting your work on the official guide.
 ## Create & Use SSH Keys for Login
