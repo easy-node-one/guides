@@ -1,39 +1,28 @@
 # Current Stats Script
 Get your stats here! Here's a simple script to poll your node and the blockchain.
 ## How do I see what block we're on?
-Use the commands below to download and setup a file called stats.sh in your harmony directory. Pick the tab for the shard you're on.
+We've released a [new python script](https://github.com/easy-node-one/harmony-validator-scripts/tree/main/stats) for finding stats on any server.
 
-Shard 0:
+To install the stats script run the following:
 ```bash
-wget https://raw.githubusercontent.com/easy-node-one/harmony-validator-scripts/main/stats/shard_0.sh && mv shard_0.sh stats.sh && chmod +x stats.sh
+wget https://raw.githubusercontent.com/easy-node-one/harmony-validator-scripts/main/stats/stats.py && pip3 install colorama
 ```
 
-Shard 1
+After downloading the stats.py file you'll need to customize 2 lines inside of it.
 ```bash
-wget https://raw.githubusercontent.com/easy-node-one/harmony-validator-scripts/main/stats/shard_1.sh && mv shard_1.sh stats.sh && chmod +x stats.sh
+ourShard='0'
+harmonyFolder='~/harmony'
 ```
 
-Shard 2
-```bash
-wget https://raw.githubusercontent.com/easy-node-one/harmony-validator-scripts/main/stats/shard_2.sh && mv shard_2.sh stats.sh && chmod +x stats.sh
-```
-
-Shard 3
-```bash
-wget https://raw.githubusercontent.com/easy-node-one/harmony-validator-scripts/main/stats/shard_3.sh && mv shard_3.sh stats.sh && chmod +x stats.sh
-```
-
-After downloading the file you can use vi, vim or nano to edit your stats.sh file and change the "**My Node**" label to whatever you would like, you're the admin, customize away!
-
-Now that it's set up you can run it anytime with:
+Save it and exit. Now that it's set up you can run it anytime with:
 
 ```bash
-./stats.sh
+python3 ~/stats.py
 ```
 
-Here's an example of Shard 3 in sync via the output of ./stats.sh
+Here's an example of Shard 3 in sync via the output of `python3 ~/stats.py`
 
-![Example output of our stats.sh script](/cimage_2.png)
+![Example output of our stats.py script](/shard3_py.png)
 
 Here's the breakdown of the output:
 
