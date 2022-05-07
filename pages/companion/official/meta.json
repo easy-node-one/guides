@@ -3,6 +3,5 @@
     "setup": "Server Setup",
     "node": "Node Setup",
     "create": "Creating A Validator",
-    "manage": "Managing A Validator",
-    "post": "Post Install"
+    "manage": "Managing A Validator"
 }
