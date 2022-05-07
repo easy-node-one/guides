@@ -2,11 +2,6 @@ import Callout from 'nextra-theme-docs/callout'
 import Image from 'next/image'
 import { useSSG } from 'nextra/ssg'
 
-# Guides by [Easy Node Community](https://easynode.one)
-Guides for Harmony ONE Protocol Validators. Welcome to Easy Node Community's Documentation site.
-
-![Easy Node Logo](/easynode_weblogo.png)
-
 export const getStaticProps = ({ params }) => {
   return fetch(`https://api.github.com/repos/easy-node-one/validatortoolbox`)
     .then((res) => res.json())
@@ -22,12 +17,19 @@ export const getStaticProps = ({ params }) => {
       revalidate: 60,
     }))
 }
+
 export const Stars = () => {
   // Get the data from SSG, and render it as a component.
   const { stars } = useSSG()
   return <strong>{stars}</strong>
 }
-Easy Node has <Stars /> stars on GitHub!
+
+# Guides by [Easy Node Community](https://easynode.one)
+Guides for Harmony ONE Protocol Validators. Welcome to Easy Node Community's Documentation site.
+
+![Easy Node Logo](/easynode_weblogo.png)
+
+Easy Node has <Stars /> 🌟 on GitHub!
 
 ## Easy Node
 Easy Node started as the validator `Slugom Crypto` back in March 2021. We've since gone through changes after helping release an installer and administrative assistant tool for Validators to utilize. You can find our current website at [EasyNode.ONE](https://easynode.one)!
