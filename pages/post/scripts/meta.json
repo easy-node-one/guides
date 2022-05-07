@@ -1,6 +1,6 @@
 {
     "index": "About",
-    "stats": "Current Stats Script",
-    "upgrade": "Harmony Upgrade Script",
+    "stats": "stats.py Script",
+    "upgrade": "Harmony App Upgrade Script",
     "osupgrade": "Ubuntu System Upgrades"
 }
