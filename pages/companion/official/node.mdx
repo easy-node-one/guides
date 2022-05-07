@@ -2,30 +2,36 @@ import Callout from 'nextra-theme-docs/callout'
 
 # Node Setup
 Notes on the node setup section
+
 ## Setup
-Remember to read our [Before I Set a Validator Up]/companion/new/index.mdx) section and make a plan before starting here. You'll want to have a non-root user account (with sudo access to run root commands is ok!) created and the ~/harmony directory setup.
+Remember to read our [Before I Set a Validator Up]/companion/new/before) section and make a plan before starting here. You'll want to have a non-root user account (with sudo access to run root commands is ok!) created and the ~/harmony directory setup.
+
 <Callout emoji="ℹ️">
 We won't cover multiple BLS Keys here as they aren't needed to get started. Make one and add one to start (worry about BLS keys when we get there).
 </Callout>
+
 If you're doing it "The Easy Node Way" and have already made a folder, always remember to change into your harmony directory before running commands!
 ```text
 cd ~/harmony
 ```
+
 ## HMY CLI Download
 #### Download Harmony CLI tool For Linux
 Use the curl command provided to download and install HMY CLI on your Linux OS inside of your ~/harmony folder.
 ```bash
 curl -LO https://harmony.one/hmycli && mv hmycli hmy && chmod +x hmy
 ```
+
 #### Output
 Verify it's installed by running this command.
 ```bash
 ./hmy --node="https://api.s0.t.hmny.io" cookbook
 ```
 The Output is a reference for commands you an perform now with the HMY CLI.
+
 # Setting up BLS Keys
 #### Our notes on BLS keys
-We suggest making 10 BLS keys on the shard you start with. Save them to your home PC. They can be reused anytime you deploy that shard again and only need to be created once. Once you have your .key & .pass files save them in a folder at home for reuse via WinSCP, scp, rsync, or however you send files to a server.
+[Here's our suggestions](/companion/new/blskeys) on how to create BLS Keys for your server.
 <Callout emoji="ℹ️">
 When you start you won't need more than 1 for quite some time (at least 9.5 million $ONE today) but if you have the others in place you won't need to restart your services and miss blocks to add more keys to your nodes.
 </Callout>
