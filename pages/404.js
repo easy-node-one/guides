@@ -6,9 +6,9 @@ export default function FourOhFour() {
     return (<>
         <body>
             <div class="justify-content-center flex">
-                <p class="text-center">
-                    <h2>Sorry, we moved a LOT of things while combining all of our old guides into <a href="https://guides.harmony.one">guides.harmony.one</a> for everyone to enjoy in one spot.</h2>
-                    <h3>Old Page Not Found - It's been moved to our new website.</h3><br /><br />
+                <p className="text-center">
+                    <h1>Easy Node - Harmony ONE Community - 404 Not</h1>
+                    <h2>Sorry, we moved a LOT of things while combining all of our old guides into <a href="https://guides.easynode.one">guides.easynode.one</a> for everyone to enjoy in one spot.</h2>
                     <Link href="/">
                         <a>
                             Click here to go to guides.easynode.one and search for your old content at it's new home.
