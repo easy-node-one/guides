@@ -7,7 +7,7 @@ export default {
     <>
       <span className="mr-2 font-extrabold hidden md:inline">Easy Node ⚡ Crypto Community</span>
       <span className="text-gray-600 font-normal hidden md:inline">
-        Harmony & Findora Guides
+        Our Open Source Harmony & Findora Guides
       </span>
     </>
   ),
