@@ -26,3 +26,21 @@ curl 'http://localhost:8669/version'
 curl 'http://localhost:8668/version' # Only if you set the 'ENABLE_LEDGER_SERVICE'
 curl 'http://localhost:8667/version' # Only if you set the 'ENABLE_QUERY_SERVICE'
 ```
+
+# Validator Updates
+See [this page](https://wiki.findora.org/docs/guides/update-version) for tips on updating the validator containers.
+
+There's 2 scripts on the page:
+
+## Update Image Version
+
+Edit the file you download for mainnet or testnet with the following changes so it works with our regular user account:
+
+```bash
+# Remove line #9 from the update image script
+sudo mkdir -p /data/findora
+```
+
+## Safety Clean
+
+No changes need to be made to this file, good to go as is.
