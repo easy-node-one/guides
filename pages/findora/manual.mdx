@@ -65,7 +65,7 @@ Now you're ready to use the [official guide](https://wiki.findora.org/docs/guide
 In this section you download the latest Findora docker imagge with the command.
 
 ### Configure Local Node
-In this section, set the export as follows:
+In this section, set the export root as follows:
 
 ```bash
 /data/findora/mainnet/
@@ -88,7 +88,7 @@ fn genkey > tmp.gen.keypair
 Copy your security key to the location in this section. We also suggest keeping a copy in your home directory.
 
 ### Store Mnemonic Words
-This section shows you how to create node.mnemonic with your validator mnemonic phrases for the software to utilize.
+This section shows you how to create node.mnemonic in the right location with your validator mnemonic phrases for the software to utilize.
 
 ### Create Memonic File
 When you create your mnemonic files, make a backup copy to restore on another server later in case of disaster.
@@ -100,23 +100,9 @@ We still need to link your wallet to `fn` so follow these instructions.
 In the [start or upgrade local node] section there is a \ missing from the command, here's the working command if you run into issues here:
 
 ```bash
-# Stop your local container if necessary
-docker rm -f findorad || exit 1
-# Start your validator container
-docker run -d \
-
-    -p 8669:8669 \
-    -p 8668:8668 \
-    -p 8667:8667 \
-    -p 26657:26657 \
-    -e EVM_CHAIN_ID=2153 \
-    --name findorad \
-    findoranetwork/findorad:latest node \
-    --ledger-dir /tmp/findora \
-    --tendermint-host 0.0.0.0 \
-    --tendermint-node-key-config-path="/root/.tendermint/config/priv_validator_key.json" \
-    --enable-query-service \
-    --enable-eth-api-service
+# towards the end of the command on the line with the following, add a \ at the end like this:
+--enable-query-service \
+--enable-eth-api-service
 ```
 
 ## Validator Commands
