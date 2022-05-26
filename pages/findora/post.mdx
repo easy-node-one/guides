@@ -1,17 +1,17 @@
 # Easy Node's Post Install Tips
 Here's a few things to know and check up on after you get setup on Findora.
 
-## Common Commands
+### Common Commands
 The most commonly used commands and how to find the rest that may be needed.
 
-### Check Logs
+## Check Logs
 Run the following to follow along live with your logs:
 
 ```bash
 docker logs -f findorad
 ```
 
-### Check Signing
+## Check Signing
 Run the following on console on your server to show the latest stats.
 
 ```bash
@@ -20,7 +20,7 @@ fn show
 
 ![/fn_show.png]
 
-### Check Status
+## Check Status
 If the following commands return status messages without any errors, then your node has been successfully configured and started:
 
 ```bash
@@ -30,12 +30,12 @@ curl 'http://localhost:8668/version' # Only if you set the 'ENABLE_LEDGER_SERVIC
 curl 'http://localhost:8667/version' # Only if you set the 'ENABLE_QUERY_SERVICE'
 ```
 
-## Validator Updates
+### Validator Updates
 See [this page](https://wiki.findora.org/docs/guides/update-version) for tips on updating the validator containers.
 
 There's 2 scripts on the page:
 
-### Update Image Version
+## Update Image Version
 Edit the file you download for mainnet or testnet with the following changes so it works with our regular user account:
 
 ```bash
@@ -43,5 +43,5 @@ Edit the file you download for mainnet or testnet with the following changes so 
 sudo mkdir -p /data/findora
 ```
 
-### Safety Clean
+## Safety Clean
 No changes need to be made to this file, good to go as is.
