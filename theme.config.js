@@ -5,9 +5,9 @@ export default {
   darkMode: 'true',
   logo: (
     <>
-      <span className="mr-2 font-extrabold hidden md:inline">Easy Node</span>
+      <span className="mr-2 font-extrabold hidden md:inline">EasyNode ⚡ Crypto Community</span>
       <span className="text-gray-600 font-normal hidden md:inline">
-        Guides
+        Harmony & Findora Guides
       </span>
     </>
   ),
