@@ -1,3 +1,5 @@
+const ROOT_DIR=""
+
 # Findora Manual Validator Setup Guide
 Here's a summary of our notes for setting up a Findora $FRA Validator and getting yourself online today!
 
@@ -68,7 +70,7 @@ In this section you download the latest Findora docker imagge with the command.
 In this section, set the export as follows:
 
 ```bash
-\export \ROOT_DIR=/data/findora/mainnet/
+export ROOT_DIR=/data/findora/mainnet/
 ```
 
 ### Get Snapshot
@@ -88,7 +90,7 @@ fn genkey > tmp.gen.keypair
 Copy your security key to the location in this section. We also suggest keeping a copy in your home directory.
 
 ### Store Mnemonic Words
-This section shows you how to create $\{ROOT_DIR\}/node.mnemonic with your validator mnemonic phrases for the software to utilize.
+This section shows you how to create ${ROOT_DIR}/node.mnemonic with your validator mnemonic phrases for the software to utilize.
 
 ### Create Memonic File
 When you create your mnemonic files, make a backup copy to restore on another server later in case of disaster.
@@ -104,8 +106,8 @@ In the [start or upgrade local node] section there is a \ missing from the comma
 docker rm -f findorad || exit 1
 # Start your validator container
 docker run -d \
-    -v $\{ROOT_DIR\}/tendermint:/root/.tendermint \
-    -v $\{ROOT_DIR\}/findorad:/tmp/findora \
+    -v ${ROOT_DIR}/tendermint:/root/.tendermint \
+    -v ${ROOT_DIR}/findorad:/tmp/findora \
     -p 8669:8669 \
     -p 8668:8668 \
     -p 8667:8667 \
