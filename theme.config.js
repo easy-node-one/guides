@@ -64,5 +64,5 @@ export default {
   nextLinks: true,
   footer: true,
   footerEditLink: 'Update me on GitHub',
-  footerText: <>Easy Node ⚡ Crypto Community {new Date().getFullYear()} © Documentation Repository.</>,
+  footerText: <>Easy Node ⚡ Crypto Community - ©{new Date().getFullYear()} - Crypto Guides</>,
 }
