@@ -113,10 +113,22 @@ echo <24 mnemonic keywords> > ${ROOT_DIR}/node.mnemonic
 
 See [this link](https://wiki.findora.org/docs/guides/auto-setup#download-and-run-the-automated-setup-script) to get the most updated version of the installation script for Testnet or Mainnet.
 
-We suggest making one modification to the script before you run it! Run the following command to change the permissions line so it doesn't set permissions as root!
+Example command you can use to download the script to your server, copy the current link from their guide:
 
 ```bash
+wget https://wiki.findora.org/assets/files/node_init_mainnet-423a36f2afake9de7ff63e61d3d4c1.sh
+```
 
+
+### Edit Script
+We suggest making two modifications to the script before you run it to allow everything to flow as your regular user account. 
+
+Edit the file you download (for either mainnet or testnet) with the following changes so it works with our regular user account:
+```bash
+# Remove line #37 from the automated install script
+sudo mkdir -p /data/findora
+# Update line #74 (75 before you delete the line above), remove sudo and update user account
+chown -R servicefindora:servicefindora ${ROOT_DIR}/tendermint/
 ```
 
 ### Run script
