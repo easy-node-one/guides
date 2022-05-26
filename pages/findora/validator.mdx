@@ -41,7 +41,9 @@ sudo apt install docker-ce
 sudo usermod -aG docker servicefindora
 ```
 
-Confirm your user is in the proper groups with 
+At this point close your terminal and reconnect to enable the new permissions.
+
+Once reconnected, confirm your user is in the proper groups with:
 
 ```bash
 groups
@@ -55,5 +57,89 @@ servicefindora sudo docker
 ## Installation
 Install the fn software, create a wallet, prep server software, and stake your 10,000+ FRA to get started.
 
+### `fn` Installation
+Run the following to download and setup the main app `fn`:
+
+```bash
+# download and move to your path
+wget https://wiki.findora.org/bin/linux/fn
+chmod +x fn
+mv fn /usr/local/bin/
+```
+
+### Create Wallet
+We suggest using a fresh wallet and creating your key file on your node for security. Always keep this information private as it unlocks access to your wallet. To generate a new wallet run the following command:
+
+```bash
+# create folders and set permissions, customize username if different than `servicefindora`
+sudo mkdir -p /data/findora
+sudo chown servicefindora:servicefindora /data/findora
+mkdir -p /data/findora/mainnet/
+mkdir -p /data/findora/tendermint/
+sudo chown -R servicefindora:servicefindora ${ROOT_DIR}/tendermint/
+# send command to create wallet
+fn genkey > tmp.gen.keypair
+# backup file in your home directory
+cp tmp.gen.keypair ~/
+sudo cp tmp.gen.keypair /data/findora/mainnet/mainnet_node.key
+```
+
+### Before Download Script
+The main guide at this point has your run the automated script, however we have a few things for you to do to prepare your disk/folders and pre-set some files for the automated script to complete a little better.
+
+Customize the following to setup your server for success, replace `servicefindora` with your regular user account name:
+
+```bash
+# pre-set some exports and set permissions for your user account
+export ROOT_DIR=/data/findora/mainnet/
+export NAMESPACE=mainnet
+# this container runs and creates some files but runs quickly
+docker run --rm -v ${ROOT_DIR}/tendermint:/root/.tendermint findoranetwork/findorad:latest init --mainnet || exit 1
+```
+
+### Create memonic file
+Setup private info for the app to access wallet:
+
+```bash
+# ex)
+# echo "repair drink action brass term blur fat doll spoon thumb raise squirrel tornado engine tumble picnic approve elegant tube urge ghost secret seminar blame" > ${ROOT_DIR}/node.mnemonic
+echo <24 mnemonic keywords> > ${ROOT_DIR}/node.mnemonic
+```
+
+### Download Script
+
+See [this link](https://wiki.findora.org/docs/guides/auto-setup#download-and-run-the-automated-setup-script) to get the most updated version of the installation script for Testnet or Mainnet.
+
+### Run script
+You should now be ready to run the automated installation script. This will pull in all files need and extract them. It may take 15+ minutes for this to complete but if all is successful you will be online and the database will be syncing:
+
+```bash
+bash -x node_init_testnet.sh
+```
+
+### Post Script Configuration
+We still need to link your wallet to `fn` which is [covered here](https://wiki.findora.org/docs/guides/auto-setup#setup-fn-cli-tool).
+
 ## Post Installation
-TBD
+Some post installation tips once you stake and activate your validator.
+
+### Fund Validator
+See [this section](https://wiki.findora.org/docs/guides/auto-setup#fund-your-validator) for the latest information on funding your validator. Due to missed block fees/slashing we recommend a bit more than the minimum amount for your validator.
+
+### Stake FRA and Set Commission Rate
+See [this section](https://wiki.findora.org/docs/guides/auto-setup#stake-initial-fra-and-set-commission-rate) for information on customizing and sending the command to create your validator.
+
+### Node Operations
+See [this section](https://wiki.findora.org/docs/guides/auto-setup#node-operations) for the latest commands for your Validator.
+
+### Node information
+See [this section](https://wiki.findora.org/docs/guides/auto-setup#view-node-information) for the latest way to get your Validator information.
+
+### Claim Rewards
+If your validator is one of the top 100 validators in total staked/delegated you will be eligible to recieve rewards. See [this section](https://wiki.findora.org/docs/guides/auto-setup#claim-fra-rewards) for info on how to claim them on your server. If you import your wallet info into the official wallet you can claim via the UI. Rewards are paid out for each successful block your validator proposes on Findora.
+
+### Unstake
+See [this section](https://wiki.findora.org/docs/guides/auto-setup#unstake-fra) for info on how to unstake some of your validator's FRA.
+
+### Close Validator
+See [this section](https://wiki.findora.org/docs/guides/auto-setup#close-validator-and-unstake-all-of-your-fra) for info on how to claim all your FRA and close down your validator
