@@ -6,13 +6,11 @@ Findora runs in a docker container. With a little massaging you can get this to 
 [Findora Manual Validator Setup Guide](https://wiki.findora.org/docs/guides/manual-setup)
 
 ## Before Starting
-We will be using the manual setup method, but there's some items to get in order first that are left out of the official guide.
-
-## Server Selection
-Grab a server, the Hardware Requirements:
-- Recommended: 16GB RAM, 4 Core CPU, 300GB Hard Disk
+We will be using the manual setup method, but there's some items to get in order first that are left out of the official guide. We're going to skip making notes on most of this guide as it's good to go from top to bottom other than a few small details.
 
 ## Pre-Setup
+We do suggest a few things before you start the manual install guide though, here's what to get done.
+
 ### User Account
 Setup a user account, give it access to the sudo (root) group. We will use the account `servicefindora` in this example but feel free to customize:
 
@@ -61,13 +59,42 @@ servicefindora sudo docker
 ## Start Manual Installation
 Now you're ready to use the [official guide](https://wiki.findora.org/docs/guides/manual-setup) to start installation. The official guide is pretty great and will cover everything you need to do a manual installation. Install the fn software, create a wallet, prep server software, and stake your 10,000+ FRA to get started.
 
-## Notes
+## Notes On Each Section In Manual Install
+
+### Download Validator Binaries and Pull Image
+In this section you download the latest Findora docker imagge with the command.
+
+### Configure Local Node
+In this section, set the export as follows:
+
+```bash
+export ROOT_DIR=/data/findora/mainnet/
+```
+
+### Get Snapshot
+"Download latest link and get url" as they state is where you'll run the main part of installation. Note at the top there's a command for testnet or mainnet, only run your preferred command.
 
 ### Create Wallet
-We suggest using a fresh wallet and creating your key file on your node for security. Always keep this information private as it unlocks access to your wallet.
+Hidden in this section is wallet creation.
+
+We suggest using a fresh wallet and creating your key file on your node for security. Always keep this information private as it unlocks access to your wallet. Here's the best way to set one up safely:
+
+```bash
+cd
+fn genkey > tmp.gen.keypair
+```
+
+### Store Security key
+Copy your security key to the location in this section. We also suggest keeping a copy in your home directory.
+
+### Store Mnemonic Words
+This section shows you how to create ${ROOT_DIR}/node.mnemonic with your validator mnemonic phrases for the software to utilize.
 
 ### Create Memonic File
 When you create your mnemonic files, make a backup copy to restore on another server later in case of disaster.
+
+### Configure your validator node to use your newly generated public and private keys
+We still need to link your wallet to `fn` so follow these instructions.
 
 ### Start or Upgrade Local Node Tip!
 In the [start or upgrade local node] section there is a \ missing from the command, here's the working command if you run into issues here:
@@ -89,15 +116,12 @@ docker run -d \
     --ledger-dir /tmp/findora \
     --tendermint-host 0.0.0.0 \
     --tendermint-node-key-config-path="/root/.tendermint/config/priv_validator_key.json" \
-    --enable-query-service
+    --enable-query-service \
     --enable-eth-api-service
 ```
 
-### Post Script Configuration
-We still need to link your wallet to `fn` which is [covered here](https://wiki.findora.org/docs/guides/auto-setup#setup-fn-cli-tool).
-
-## Post Installation
-Some post installation tips once you stake and activate your validator.
+## Validator Commands
+We cover commands for checking your information [here](/findora/post).
 
 ### Update Validator Information or Commission
 Update your staker_memo file information and then you can perform the following command to send a transaction to update your dashboard information.
@@ -108,24 +132,12 @@ fn staker-update -M "$(cat staker_memo)"
 ```
 
 ### Fund Validator
-See [this section](https://wiki.findora.org/docs/guides/auto-setup#fund-your-validator) for the latest information on funding your validator. Due to missed block fees/slashing we recommend a bit more than the minimum amount for your validator.
+See [this section](https://wiki.findora.org/docs/guides/manual-setup#fund-your-validator) for the latest information on funding your validator. Due to missed block fees/slashing we recommend a bit more than the minimum amount for your validator.
 
 ### Stake FRA, Set Commission Rate, Start Validating and add to Dashboard
-See [this section](https://wiki.findora.org/docs/guides/auto-setup#stake-initial-fra-and-set-commission-rate) for information on customizing and sending the command to create your validator.
+See [this section](https://wiki.findora.org/docs/guides/manual-setup#stake-initial-fra-and-set-commission-rate) for information on customizing and sending the command to create your validator.
 
 After you sucessfully register your wallet and stake your initial Findora your validator will show up on the [staking dashboard](https://findorascan.io/nodes) along with the [SmartStake site](https://findora.smartstake.io/).
 
-### Node Operations
-See [this section](https://wiki.findora.org/docs/guides/auto-setup#node-operations) for the latest commands for your Validator.
-
-### Node information
-See [this section](https://wiki.findora.org/docs/guides/auto-setup#view-node-information) for the latest way to get your Validator information.
-
-### Claim Rewards
-If your validator is one of the top 100 validators in total staked/delegated you will be eligible to recieve rewards. See [this section](https://wiki.findora.org/docs/guides/auto-setup#claim-fra-rewards) for info on how to claim them on your server. If you import your wallet info into the official wallet you can claim via the UI. Rewards are paid out for each successful block your validator proposes on Findora.
-
-### Unstake
-See [this section](https://wiki.findora.org/docs/guides/auto-setup#unstake-fra) for info on how to unstake some of your validator's FRA.
-
-### Close Validator
-See [this section](https://wiki.findora.org/docs/guides/auto-setup#close-validator-and-unstake-all-of-your-fra) for info on how to claim all your FRA and close down your validator
+## Post Installation
+At this point both our guides come [back together](/findora/post) to talk about what commands you need to monitor your validator and other good to know information!
