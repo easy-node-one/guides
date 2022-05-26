@@ -1,11 +1,11 @@
 export default {
   github: 'https://github.com/easy-node-one/guides',
   docsRepositoryBase: 'https://github.com/easy-node-one/guides/blob/master',
-  titleSuffix: ' – EasyNode ⚡ Crypto Community',
+  titleSuffix: ' – Easy Node ⚡ Crypto Community',
   darkMode: 'true',
   logo: (
     <>
-      <span className="mr-2 font-extrabold hidden md:inline">EasyNode ⚡ Crypto Community</span>
+      <span className="mr-2 font-extrabold hidden md:inline">Easy Node ⚡ Crypto Community</span>
       <span className="text-gray-600 font-normal hidden md:inline">
         Harmony & Findora Guides
       </span>
