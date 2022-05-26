@@ -1,6 +1,13 @@
 # Easy Node's Post Install Tips
 Here's a few things to know and check up on after you get setup on Findora.
 
+## Check Logs
+Run the following to follow along live with your logs:
+
+```bash
+docker logs -f findorad
+```
+
 ## Check Signing
 Run the following on console on your server to show the latest stats.
 
@@ -9,3 +16,13 @@ fn show
 ```
 
 ![/fn_show.png]
+
+## Check Status
+If the following commands return status messages without any errors, then your node has been successfully configured and started:
+
+```bash
+curl 'http://localhost:26657/status'
+curl 'http://localhost:8669/version'
+curl 'http://localhost:8668/version' # Only if you set the 'ENABLE_LEDGER_SERVICE'
+curl 'http://localhost:8667/version' # Only if you set the 'ENABLE_QUERY_SERVICE'
+```
