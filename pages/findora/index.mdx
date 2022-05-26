@@ -24,30 +24,49 @@ export const Stars = () => {
   return <strong>{stars}</strong>
 }
 
-# Guides by [Easy Node ⚡ Harmony ONE Community](https://easynode.one)
-Welcome to Easy Node's Guides for [Harmony $ONE Protocol](https://harmony.one) & [Findora $FRA Validators](https://findora.org).
+# Harmony ONE Guides by [Easy Node ⚡ Harmony ONE Community](https://easynode.one)
+Welcome to Easy Node's Guides for [Harmony $ONE Protocol](https://harmony.one)
 
 ![Easy Node Logo](/easynode_weblogo.png)
 
-## About Easy Node
-Easy Node started as the validator `Slugom Crypto` back in March 2021. We've since released many tools for Validators and Delegators of Harmony ONE to utilize. We started validating on Findora in May 2022 and quickly updated our guides to include notes for people looking to run a Findora Validator.
+## What is a Harmony Validator?
+You're probably already familiar at this point but Harmony Validators verify each block produced on chain with all of the current transactions. Beyond that there's two ways that people in the Harmony Ecosystem refer to a "Harmony Validator" item:
 
-You can find our current website at [EasyNode.ONE](https://easynode.one)!
+- **Validator Wallet** - A wallet is simply upgraded to become a validator wallet. On the [staking portal](https://staking.harmony.one) you see the validator wallet addresses that were registered at creation time.
+- **Validator Server Node** - The platform you use to create a wallet, create a validator, then later manage your "Harmony Validator Server Node" aka the computer running harmony using [your wallet](/harmony/companion/new/before#initial-wallet--funds) and your [bls keys](/harmony/companion/official/node#our-notes-on-bls-keys).
 
-You can find a deep dive on us in our [About Easy Node](/about) section.
+![Harmony Logo](/harmony_logo_white.png)
 
-This Documentation Guide repository has <Stars /> 🌟 on [GitHub](https://github.com/easy-node-one/guides). If you enjoy our guides can you head to [our page](https://github.com/easy-node-one/guides) and give us a 🌟 today? Thank you!
+## Staking Guide
+Coming soon!
 
-## About this guide
-While [the Official Harmony $ONE Validator guide](https://docs.harmony.one/home/network/validators) is quite amazing and helpful, there are some gaps left that may leave some new administrators with questions. 
+## New Validator Guide
+This section is our original Companion Guide. Learning everything by hand is necessary as there is no support or warranty when you run into issues on the blockchain!
 
-We created a guide in March 2021 for New Validators to make it through the official documentation easier. That has become our "New Validators" section while the "Experienced Validators" covers using our advanced toolbox software.
+In the [New Validators Companion](/harmony/companion) section of this guide we focus on teaching prospective validators how to prepare, install/run the software, and what to do afterwards. While using our guide along side [the Official Harmony $ONE Validator guide](https://docs.harmony.one/home/network/validators). You'll want all of this knowledge to help you come election time as only you support yourself as a validator.
+
+This site was created to help anyone become a Harmony Validator and also to help existing Harmony Validator's manage their nodes better and more securly. This guide contains the following main sections:
+- [New Validators](/harmony/companion) will want to go through this guide to setup their first server. This will give you the base you need to succeed. Our guide matches up with the official guide to tell you page by page what info to look for.
+- [Experienced Validators](/harmony/toolbox) will want this guide for installing Harmony on a new server via the validatortoolbox application.
+- [Post Install](/post) is where both guides converge to cover post installation, notes are added for items that can be run via the validator toolbox management menu and we also explain how to get the information manually or with a script.
+
+## Experienced Validator Guide
+This section is our [Validator Toolbox](/harmony/toolbox) Guide and has you covered to help you out with our Installer & Manage Menu application. 
+
+If you're a returning visitor you probably want the [Quick Install](/harmony/toolbox/quick-install) instructions.
 
 <Callout type="error" emoji="️🚫">
-    We highly suggest new Harmony $ONE Validators manually install their first server software setup before using our `validatortoolbox` application!
+    New Validators can take a look at our installer, but please, learn how to do it by hand first!
 </Callout>
 
-We updated the guide in May 2022 to have separate sections for Harmony & Findora.
+## The Easy Node Way
+When using our guides or tips you can always assume the following things that aren't really specified in the Harmony Documents. We call this "The Easy Node Way" which helps with organization and security:
+
+-  Setup a user account to run harmony
+  -  Don't use root or harmony as account names!!!
+  -  We suggest your username as something like serviceharmony which will be included in "The Slugom Way!!!"
+-  Use a folder in your user home directory to store harmony
+  -  We suggest /home/serviceharmony/harmony
 
 ## Validator Support
 While no support is provided and you are your own help desk, you can always ask for help in...
