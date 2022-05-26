@@ -1,13 +1,13 @@
 export default {
   github: 'https://github.com/easy-node-one/guides',
   docsRepositoryBase: 'https://github.com/easy-node-one/guides/blob/master',
-  titleSuffix: ' – EasyNode',
+  titleSuffix: ' – EasyNode ⚡ Crypto Community',
   darkMode: 'true',
   logo: (
     <>
       <span className="mr-2 font-extrabold hidden md:inline">Easy Node</span>
       <span className="text-gray-600 font-normal hidden md:inline">
-        Harmony ONE Guides
+        Guides
       </span>
     </>
   ),
@@ -18,15 +18,15 @@ export default {
       <meta name="theme-color" content="#ffffff" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta httpEquiv="Content-Language" content="en" />
-      <meta name="description" content="Easy Node Documentation Repository" />
-      <meta name="og:description" content="The central location for all documentation guides created by Easy Node - Mostly focused on Harmony ONE Protocol Blockchain" />
+      <meta name="description" content="Easy Node ⚡ Crypto Community Guides" />
+      <meta name="og:description" content="A documentation site for all crypto guides produced by Easy Node ⚡ Crypto Community" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:image" content="https://easynode.one/static/img/ez_node_sq_lg.jpg" />
       <meta name="twitter:site:domain" content="guides.easynode.one" />
       <meta name="twitter:url" content="https://guides.easynode.one" />
-      <meta name="og:title" content="Easy Node: Documentation Repository" />
+      <meta name="og:title" content="Easy Node ⚡ Crypto Community Guides" />
       <meta name="og:image" content="https://easynode.one/static/img/ez_node_sq_lg.jpg" />
-      <meta name="apple-mobile-web-app-title" content="EasyNode" />
+      <meta name="apple-mobile-web-app-title" content="EasyNode ⚡ Crypto Community Guides" />
       <link
         rel="apple-touch-icon"
         sizes="180x180"
@@ -64,5 +64,5 @@ export default {
   nextLinks: true,
   footer: true,
   footerEditLink: 'Update me on GitHub',
-  footerText: <>Easy Node Harmony Community {new Date().getFullYear()} © Documentation Repository.</>,
+  footerText: <>Easy Node ⚡ Crypto Community {new Date().getFullYear()} © Documentation Repository.</>,
 }
