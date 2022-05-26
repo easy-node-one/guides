@@ -28,10 +28,28 @@ sudo usermod -aG sudo servicefindora
 Now you can disconnect and reconnect as the new user account. You can also prep the user account `~/.ssh` folder and SSH keys to use that login option at this time.
 
 ### Install Docker
-The official guide doesn't mention that you need to install Docker. Here's our notes for installing docker:
+The official guide doesn't mention that you need to install Docker. 
+
+Taken from [this guide](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04) here's our notes for installing docker on Ubuntu 20.04LTS once your server is online and logged in as the user `servicefindora` (update if you used a different account):
 
 ```bash
-TBD
+sudo apt update
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+sudo apt install docker-ce
+sudo usermod -aG docker servicefindora
+```
+
+Confirm your user is in the proper groups with 
+
+```bash
+groups
+```
+
+```bash
+Example Output
+servicefindora sudo docker
 ```
 
 ## Installation
