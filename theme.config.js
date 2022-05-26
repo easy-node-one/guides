@@ -26,7 +26,7 @@ export default {
       <meta name="twitter:url" content="https://guides.easynode.one" />
       <meta name="og:title" content="Easy Node ⚡ Crypto Community Guides" />
       <meta name="og:image" content="https://easynode.one/static/img/ez_node_sq_lg.jpg" />
-      <meta name="apple-mobile-web-app-title" content="EasyNode ⚡ Crypto Community Guides" />
+      <meta name="apple-mobile-web-app-title" content="Easy Node ⚡ Crypto Community Guides" />
       <link
         rel="apple-touch-icon"
         sizes="180x180"
