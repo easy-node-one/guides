@@ -1,0 +1,99 @@
+#  Digital Ocean
+Here's what you need to get done to install validator-toolbox on a brand new droplet that you plan to run as a Harmony ONE Validator.
+
+## Firewall Configuration
+Here's some tips for going pro with your digital ocean firewall.
+
+![Typical firewall setup for Digital Ocean](/image_43.png)
+
+- You only need ports 6000 & 9000 open to all IP addresses.
+- Port 22 for SSH access only needs to be allowed from your current IP \(see [whatismyip.com](https://whatismyip.com) for your current external IP address\)
+  - If you try to access from another location, simply add that IP into the website firewall and remove when back home
+- On the droplets section of your firewalls page, create a tag
+  - Apply that tag to all current servers and they will get that firewall automatically
+  - Apply the tag while creating a server and it will get that firewall automatically
+
+![Firewall, tagged with ONE](/image_44.png)
+
+## Droplet \(Server\) Creation
+Log into the Digital Ocean website, and select create a new droplet.
+
+## Here are our current suggestions:
+Choose an Image - Choose only Ubuntu 20.04 \(LTS\) x64 here.
+
+![Operating Systems](/image_3.png)
+
+## Choose a plan
+The server size you pick is up to you and your budget. We suggest using Dedicated CPU Optimized nodes with the following specifications at a minimum:
+- Shard 0 - 4+ dedicated CPU server node  
+- Shard 1-3 - 2+ dedicated CPU server node
+
+![CPU-Optimized Dedicated CPU Systems](/image_5.png)
+
+## Add block storage
+Click add Volume - You will use block storage to hold all of your harmony files. Block storage can be expanded without interrupting your node so it's a very economical choice for saving money if you can manage your disk space wisely.
+
+We currently suggest using 1TB+ for your storage volume. Check with the [pangaea telegram chat](https://t.me/PangaeaVolunteers) or [harmony official discord](https://harmony.one/discord) to verify shard size if this is your first download.
+
+You will want to **Automatically format & mount* the volume and you can leave the filesystem type as **Ext4**.
+
+![550GB block storage volume as of 8/11/2021](/image_8.png)
+
+## Choose a datacenter region
+This one is open for debate but we stick to north american servers as they seem to have the best download and response times for the blockchain. If you have slow rclone speeds or missed signings consider using a north american server for your next build.
+
+## VPC network
+You can skip this option
+
+## User Data
+![User Data section filled out by.....YOU!!!](/image_4.png)
+
+You can easily make your server compliant to run validatortoolbox by selecting "User data" here along with "Monitoring" as options. This will setup a proper user account with access and all the required packages to run validatortoolbox and the Harmony software without any manual setup.
+
+Once you check the "User Data" box a large box will appear to input code. **Copy the box below and edit the information* to include:
+
+**Customize the username**: We have pre-filled `serviceharmony` as our username suggestion but anything other than **root* works here!
+
+**ssh-authorized-keys**: Add your own ssh-rsa public key in place of the ssh-rsa example key below to inject it into the account name you are creating above.
+
+```bash
+#cloud-config
+users:
+  - name: serviceharmony
+    groups: sudo
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh-authorized-keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAA_EXAMPLE_KEY_ONLY_OOHch79N5OnB136TaVdXPQFaYFzubA1Lzbeus5H2BcbMieDyGBBTh4gEEkz2hsGCXeaw==
+package_upgrade: true
+packages:
+  - dnsutils
+  - nethogs
+  - python3-pip
+  - python3-dotenv
+```
+Once you have your code customized, paste it into the **User Data* box as shown
+
+## Authentication
+The keys listed in this section get injected into the `root` account for the server. It's always good to use your keys here as a backup login method. Select any keys you would like to use.
+
+Don't have any keys here? Go back to the New Validator Pre-Install and learn how to [create a key pair](/harmony/toolbox/before/ssh-keys).
+
+## Finalize and create
+Here you will pick how many copies of this server you would like, 1 will do.
+
+You also choose a hostname. This is just a label you set to know which server you are on. We will display this name on the validator-toolbox so you know which server you are looking at currently.
+
+## Add tags
+Here you can apply a label to your new server. We have a tag setup named ONE that applies our firewall rules. Learn how to configure your firewall for digital ocean and use a tag in this guide here.
+
+## Select Project
+If you use a project to keep track of your servers, select it or create one here.
+
+## Create Droplet
+Now it's time to create your droplet. Click the button to get started and your server will start building.
+
+After a few minutes, you will be able to use ssh to gain access to your new server.
+
+## Server Ready
+Once your server is built you are ready to login as `serviceharmony` or the username you specified in the userdata section!

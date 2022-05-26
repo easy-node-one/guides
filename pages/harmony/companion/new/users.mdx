@@ -1,0 +1,37 @@
+# Create A User Account
+How to create a regular user account in linux to use for login.
+
+## Make a regular user account
+Since there are many versions of Linux we won't cover this in depth but here's what you'll need to do:
+- never run as `root`
+- Make a regular user account
+- Setup SSH key pairs for login
+- Here's [a guide](https://www.linuxbabe.com/linux-server/setup-passwordless-ssh-login) covering ssh key pair creation and usage in depth.
+    - We highly suggest SSH key login and disabling password logins for security purposes.
+- We suggest using [Termius](/harmony/companion/new/tools#termius) for file transfers the easy way on windows
+- If you have problems google how to make a user account and how to give it root access for your provider or operating system as that has too many variables to cover.
+- We suggest using the name `serviceharmony` or something similar for your account to keep it unique. The official guide suggests `harmony` but that can lead to confusion having your account named the same as the folder it's in and having an app of the same name.
+
+## Creation Commands
+After you log into your new server as root perform the following:
+```bash
+adduser
+```
+
+Answer the prompted questions (you can just leave them blank, this is just local info on your server).
+
+![User Creation Ubuntu](/new_user_1.png)
+
+Then add your new user to the sudoers group. Replace serviceharmony with your username if you're deviating. 
+
+```bash
+usermod -aG sudo serviceharmony
+```
+
+![User Creation Ubuntu](/new_user_2.png)
+
+## New User ready
+You can now login as the new user using the password created.
+
+## SSH Key Login
+You'll want to setup SSH Key Login. See [this guide](https://www.linuxbabe.com/linux-server/setup-passwordless-ssh-login) for info on creating, installing and managing SSH Keys.

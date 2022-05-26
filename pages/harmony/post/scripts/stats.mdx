@@ -1,0 +1,41 @@
+# Current Stats Script
+Get your stats here! Here's a simple script to poll your node and the blockchain.
+
+## Validator Toolbox Users
+This is option #1 in your toolbox menu. You also have the option of getting your stats at anytime by using the included stats.py script customzied for the toolbox .env file:
+```bash
+python3 ~/validatortoolbox/harmony/toolbox/stats.py
+```
+
+## First Time or Non Toolbox Users
+We've released a [python script](https://github.com/easy-node-one/harmony-validator-scripts/tree/main/stats) for finding stats on any server. You'll need to have python3 and pip3 installed for this to run.
+
+To install the stats script run the following:
+```bash
+wget https://raw.githubusercontent.com/easy-node-one/harmony-validator-scripts/main/stats/stats.py && pip3 install colorama
+```
+
+After downloading the stats.py file you'll need to customize 2 lines inside of it.
+```bash
+ourShard='0'
+harmonyFolder='~/harmony'
+```
+
+Save it and exit. Now that it's set up you can run it anytime with:
+
+```bash
+python3 ~/stats.py
+```
+
+Here's an example of Shard 3 in sync via the output of `python3 ~/stats.py`
+
+![Example output of our stats.py script](/shard3_py.png)
+
+Here's the breakdown of the output:
+
+- First line is a simple print of the date & time
+- Second Section - Compares shard 0 on your server to shard 0 on the blockchain.
+- Third Section - Compares local shard (3 in this photo) on your server to shard on the blockchain
+- Uptime - Your node information: how long it's been booted up, # of users, cpu load average - lower means less resources in use
+- Harmony DB Size - A print out of the size of your databases noted with name to the right of each.
+- Harmony Version - A print out of the current version of your harmony application
