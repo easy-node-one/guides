@@ -63,6 +63,6 @@ export default {
   prevLinks: true,
   nextLinks: true,
   footer: true,
-  footerEditLink: 'Update This Page GitHub',
+  footerEditLink: 'Update me on GitHub',
   footerText: <>Easy Node ⚡ Crypto Community - ©{new Date().getFullYear()} - Crypto Guides</>,
 }
