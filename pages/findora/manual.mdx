@@ -104,8 +104,8 @@ In the [start or upgrade local node] section there is a \ missing from the comma
 docker rm -f findorad || exit 1
 # Start your validator container
 docker run -d \
-    -v \$\{ROOT_DIR}/tendermint:/root/.tendermint \
-    -v \$\{ROOT_DIR}/findorad:/tmp/findora \
+    -v \${ROOT_DIR}/tendermint:/root/.tendermint \
+    -v \${ROOT_DIR}/findorad:/tmp/findora \
     -p 8669:8669 \
     -p 8668:8668 \
     -p 8667:8667 \
