@@ -5,6 +5,5 @@
   "monitor": "Node Monitoring",
   "tools": "Validator Node Tools",
   "scripts": "Validator Scripts",
-  "backup": "Running A Backup",
-  "later": "Suggestions"
+  "backup": "Running A Backup"
 }
