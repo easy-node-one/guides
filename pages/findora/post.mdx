@@ -33,20 +33,21 @@ curl 'http://localhost:8667/version' # Only if you set the 'ENABLE_QUERY_SERVICE
 ### Validator Updates
 See [this page](https://wiki.findora.org/docs/guides/update-version) for tips on updating the validator containers.
 
-There's 2 scripts on the page:
-
-## Update Image Version
-Edit the file you download for mainnet or testnet with the following changes so it works with our regular user account:
-
-```bash
-# Remove line #9 from the update image script
-sudo mkdir -p /data/findora
-```
+There's 2 scripts on the page but we only need this one:
 
 ## Safety Clean
 After you've installed the Findora software and are active on the blockchain, this is the only script you need to run going forward for upgrades. If you run the original script it will wipe your files and re-image your system causing you to miss blocks which costs your validator delegator pool .3 Findora per missed block at this point. Become familiar with this as they update on a regular basis.
 
 No changes need to be made to this file, good to go as is.
+
+## Updating Dashboard Info
+Simply edit your staker_memo file and then re-send the following command:
+
+`fn staker-update -M "$(cat staker_memo)"`
+
+If you would like to change your commission simply add the `-R` flag and your new rate, this is an example to set it to 5% commission:
+
+`fn staker-update -M "$(cat staker_memo) -R 0.05"`
 
 ## Resources
 
