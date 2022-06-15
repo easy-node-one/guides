@@ -100,9 +100,8 @@ We still need to link your wallet to `fn` so follow these instructions.
 In the [start or upgrade local node] section there is a \ missing from the command, here's the working command if you run into issues here:
 
 ```bash
-# towards the end of the command on the line with the following, add a \ at the end like this:
---enable-query-service \
---enable-eth-api-service
+docker rm -f findorad || exit 1
+docker run -d -v /data/findora/mainnet/tendermint:/root/.tendermint -v /data/findora/mainnet/findorad:/tmp/findora -p 8669:8669 -p 8668:8668 -p 8667:8667 -p 8545:8545 -p 26657:26657 -e EVM_CHAIN_ID=2152 --name findorad findoranetwork/findorad:v0.3.25-release node --ledger-dir /tmp/findora --tendermint-host 0.0.0.0 --tendermint-node-key-config-path=/root/.tendermint/config/priv_validator_key.json --enable-query-service --enable-eth-api-service
 ```
 
 ## Validator Commands
