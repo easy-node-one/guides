@@ -34,7 +34,7 @@ The official guide doesn't mention that you need to install Docker.
 Taken from [this guide](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04) here's our notes for installing docker on Ubuntu 20.04LTS once your server is online and logged in as the user `servicefindora` (update if you used a different account):
 
 ```bash
-sudo apt update
+sudo apt update -y
 sudo apt install apt-transport-https ca-certificates curl software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
@@ -68,7 +68,7 @@ Run the following to download and setup the main app `fn`:
 # download and move to your path
 wget https://wiki.findora.org/bin/linux/fn
 chmod +x fn
-mv fn /usr/local/bin/
+sudo mv fn /usr/local/bin/
 ```
 
 ### Create Wallet
