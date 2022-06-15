@@ -80,7 +80,7 @@ sudo mkdir -p /data/findora
 sudo chown servicefindora:servicefindora /data/findora
 mkdir -p /data/findora/mainnet/
 mkdir -p /data/findora/tendermint/
-sudo chown -R servicefindora:servicefindora ${ROOT_DIR}/tendermint/
+sudo chown -R servicefindora:servicefindora /data/findora/
 # send command to create wallet
 fn genkey > tmp.gen.keypair
 # backup file in your home directory
