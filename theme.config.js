@@ -1,11 +1,11 @@
 export default {
   github: 'https://github.com/easy-node-one/guides',
   docsRepositoryBase: 'https://github.com/easy-node-one/guides/blob/master',
-  titleSuffix: ' – Easy Node ⚡ Crypto Community',
+  titleSuffix: ' – Easy Node ⚡ Professional Validators',
   darkMode: 'true',
   logo: (
     <>
-      <span className="mr-2 font-extrabold hidden md:inline">Easy Node ⚡ Crypto Community</span>
+      <span className="mr-2 font-extrabold hidden md:inline">Easy Node ⚡ Professional Validators</span>
       <span className="text-gray-600 font-normal hidden md:inline">
         Our Open Source Harmony & Findora Guides
       </span>
@@ -18,15 +18,15 @@ export default {
       <meta name="theme-color" content="#ffffff" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta httpEquiv="Content-Language" content="en" />
-      <meta name="description" content="Easy Node ⚡ Crypto Community Guides" />
-      <meta name="og:description" content="A documentation site for all crypto guides produced by Easy Node ⚡ Crypto Community" />
+      <meta name="description" content="Easy Node ⚡ Professional Validators Guides" />
+      <meta name="og:description" content="A documentation site for all crypto guides produced by Easy Node ⚡ Professional Validators" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:image" content="https://easynode.one/static/img/ez_node_sq_lg.jpg" />
       <meta name="twitter:site:domain" content="guides.easynode.one" />
       <meta name="twitter:url" content="https://guides.easynode.one" />
-      <meta name="og:title" content="Easy Node ⚡ Crypto Community Guides" />
+      <meta name="og:title" content="Easy Node ⚡ Professional Validators Guides" />
       <meta name="og:image" content="https://easynode.one/static/img/ez_node_sq_lg.jpg" />
-      <meta name="apple-mobile-web-app-title" content="Easy Node ⚡ Crypto Community Guides" />
+      <meta name="apple-mobile-web-app-title" content="Easy Node ⚡ Professional Validators Guides" />
       <link
         rel="apple-touch-icon"
         sizes="180x180"
@@ -64,5 +64,5 @@ export default {
   nextLinks: true,
   footer: true,
   footerEditLink: 'Update me on GitHub',
-  footerText: <>Easy Node ⚡ Crypto Community - ©{new Date().getFullYear()} - Crypto Guides</>,
+  footerText: <>Easy Node ⚡ Professional Validators - ©{new Date().getFullYear()} - Crypto Guides</>,
 }
