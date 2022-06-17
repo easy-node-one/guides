@@ -1,11 +1,9 @@
 # Findora Automated Validator Setup Guide
-We haven't had much luck with this method at this point but you can give it a try. Running the steps manually to verify each step works properly seems to be a better option at this time. Either way, here's a summary of our notes for setting up a Findora $FRA Validator and getting yourself online today!
+Here's a summary of our notes for setting up a Findora $FRA Validator and getting yourself online today!
 
 Findora runs in a docker container and has an automated setup tool. With a little massaging you can get this to run flawlessly with a regular user account and not using root.
 
 [Findora Automated Validator Setup Guide](https://wiki.findora.org/docs/guides/auto-setup)
-
-This guide is for Mainnet. For Testnet simply replace any references to Mainnet below.
 
 ## Automated Setup
 We will be using the automated setup method, but there's some items to get in order first that are left out of the official guide.
@@ -14,10 +12,8 @@ We will be using the automated setup method, but there's some items to get in or
 Grab a server, the Hardware Requirements:
 - Recommended: 16GB RAM, 4 Core CPU, 300GB Hard Disk
 
-## Pre-Setup - Easy Node Suggestions
+## Pre-Setup
 ### User Account
-We suggest using a non-root account for security purposes.
-
 Setup a user account, give it access to the sudo (root) group. We will use the account `servicefindora` in this example but feel free to customize:
 
 ```bash
@@ -53,6 +49,7 @@ Once reconnected, confirm your user is in the proper groups with:
 ```bash
 groups
 ```
+
 
 Verify the output is similar to:
 
@@ -128,7 +125,7 @@ We suggest making two modifications to the script before you run it to allow eve
 
 Edit the file you download (for either mainnet or testnet) with the following changes so it works with our regular user account:
 ```bash
-# Remove line #37 from the automated install script, we made it earlier already
+# Remove line #37 from the automated install script
 sudo mkdir -p /data/findora
 # Update line #74 (75 before you delete the line above), remove sudo and update user account
 chown -R servicefindora:servicefindora ${ROOT_DIR}/tendermint/
@@ -143,13 +140,6 @@ bash -x node_init_testnet.sh
 
 ### Post Script Configuration
 We still need to link your wallet to `fn` which is [covered here](https://wiki.findora.org/docs/guides/auto-setup#setup-fn-cli-tool).
-
-For Mainnet:
-```
-fn setup -S https://prod-mainnet.prod.findora.org
-fn setup -O ${ROOT_DIR}/node.mnemonic
-fn setup -K ${ROOT_DIR}/tendermint/config/priv_validator_key.json
-```
 
 ## Post Installation
 Some post installation tips once you stake and activate your validator.
