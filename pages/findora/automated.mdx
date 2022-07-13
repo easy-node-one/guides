@@ -34,7 +34,7 @@ The official guide doesn't mention that you need to install Docker.
 Taken from [this guide](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04) here's our notes for installing docker on Ubuntu 20.04LTS once your server is online and logged in as the user `servicefindora` (update if you used a different account):
 
 ```bash
-sudo apt update
+sudo apt update -y
 sudo apt install apt-transport-https ca-certificates curl software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
@@ -68,19 +68,21 @@ Run the following to download and setup the main app `fn`:
 # download and move to your path
 wget https://wiki.findora.org/bin/linux/fn
 chmod +x fn
-mv fn /usr/local/bin/
+sudo mv fn /usr/local/bin/
 ```
 
 ### Create Wallet
 We suggest using a fresh wallet and creating your key file on your node for security. Always keep this information private as it unlocks access to your wallet. To generate a new wallet run the following command:
 
 ```bash
+# pre-set some exports and set permissions for your user account
+export NAMESPACE=mainnet
 # create folders and set permissions, customize username if different than `servicefindora`
 sudo mkdir -p /data/findora
 sudo chown servicefindora:servicefindora /data/findora
-mkdir -p /data/findora/mainnet/
-mkdir -p /data/findora/tendermint/
-sudo chown -R servicefindora:servicefindora ${ROOT_DIR}/tendermint/
+mkdir -p /data/findora/mainnet/tendermint/
+export ROOT_DIR=/data/findora/mainnet/
+sudo chown -R servicefindora:servicefindora /data/findora/
 # send command to create wallet
 fn genkey > tmp.gen.keypair
 # backup file in your home directory
@@ -89,14 +91,11 @@ cp tmp.gen.keypair /data/findora/mainnet/mainnet_node.key
 ```
 
 ### Before Download Script
-The main guide at this point has your run the automated script, however we have a few things for you to do to prepare your disk/folders and pre-set some files for the automated script to complete a little better.
+The main guide at this point has you run the automated script, however we have a few things for you to do to prepare your disk/folders and pre-set some files for the automated script to complete a little better.
 
 Customize the following to setup your server for success, replace `servicefindora` with your regular user account name:
 
 ```bash
-# pre-set some exports and set permissions for your user account
-export ROOT_DIR=/data/findora/mainnet/
-export NAMESPACE=mainnet
 # this container runs and creates some files but runs quickly
 docker run --rm -v ${ROOT_DIR}/tendermint:/root/.tendermint findoranetwork/findorad:latest init --mainnet || exit 1
 ```
