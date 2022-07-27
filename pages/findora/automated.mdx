@@ -100,6 +100,10 @@ Customize the following to setup your server for success, replace `servicefindor
 ```bash
 # this container runs and creates some files but runs quickly
 docker run --rm -v ${ROOT_DIR}/tendermint:/root/.tendermint findoranetwork/findorad:latest init --mainnet || exit 1
+# setup fn for mainnet, swap mainnet for testnet if testing
+fn setup -S https://prod-mainnet.prod.findora.org
+fn setup -O ${ROOT_DIR}/node.mnemonic
+fn setup -K ${ROOT_DIR}/tendermint/config/priv_validator_key.json
 ```
 
 ### Create memonic file
