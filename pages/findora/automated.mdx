@@ -110,6 +110,9 @@ Setup private info for the app to access wallet:
 echo <24 mnemonic keywords> > ${ROOT_DIR}/node.mnemonic
 ```
 
+### Connect fn to wallet
+We still need to link your wallet to `fn` which is [covered here](https://wiki.findora.org/docs/guides/auto-setup#setup-fn-cli-tool).
+
 ### Download Script
 
 See [this link](https://wiki.findora.org/docs/guides/auto-setup#download-and-run-the-automated-setup-script) to get the most updated version of the installation script for Testnet or Mainnet.
@@ -119,7 +122,6 @@ Example command you can use to download the script to your server, copy the curr
 ```bash
 wget https://wiki.findora.org/assets/files/node_init_mainnet-423a36f2adaaeab9de7ff63e61d3d4c1.sh
 ```
-
 
 ### Edit Script
 We suggest making two modifications to the script before you run it to allow everything to flow as your regular user account. 
@@ -138,9 +140,6 @@ You should now be ready to run the automated installation script. This will pull
 ```bash
 bash -x node_init_testnet.sh
 ```
-
-### Post Script Configuration
-We still need to link your wallet to `fn` which is [covered here](https://wiki.findora.org/docs/guides/auto-setup#setup-fn-cli-tool).
 
 ## Post Installation
 Some post installation tips once you stake and activate your validator.
