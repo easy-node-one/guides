@@ -1,7 +1,7 @@
 # Easy Node's Findora "Automated" Validator Setup Guide
 This guide is for setting up a brand new wallet & validator for the first time. 
 
-### Moving Servers
+### Our Notes on Moving Servers
 For people looking to move providers and re-create a validator, you'll need to import a few files and be sure to shut off the old server long before recreating a server to avoid double signing slashing (5% from your pool). Missing blocks slashing is far less and easier to explain than getting slashed for 5%.
 
 We'll make notes along the way on the files needed (tmp.gen.keypair and priv_validator_key.json) that you should provide. You can run through the whole install and then update the files, restart docker and reconnect `fn` to your proper files to see your validator begin signing with the proper keys.
