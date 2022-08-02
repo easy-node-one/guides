@@ -96,6 +96,8 @@ cp tmp.gen.keypair /data/findora/mainnet/mainnet_node.key
 ```bash
 # this container runs and creates some files but runs quickly
 docker run --rm -v ${ROOT_DIR}/tendermint:/root/.tendermint findoranetwork/findorad:latest init --mainnet || exit 1
+# fix permissions after this
+sudo chown -R servicefindora:servicefindora /data/findora/
 ```
 
 ### Create memonic file
