@@ -103,15 +103,6 @@ Setup private phrase info for the `fn` application to access your wallet. If you
 echo <24 mnemonic keywords> > ${ROOT_DIR}/node.mnemonic
 ```
 
-### Finish setup of fn
-Run the following commands to configure `fn` at this point:
-
-```bash
-fn setup -S https://prod-mainnet.prod.findora.org
-fn setup -O ${ROOT_DIR}/node.mnemonic
-fn setup -K ${ROOT_DIR}/tendermint/config/priv_validator_key.json
-```
-
 ### Create initial docker container
 To avoid a future bug, manually run this at this point to download the container image and initialize items:
 
