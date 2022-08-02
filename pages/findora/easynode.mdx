@@ -144,7 +144,7 @@ Edit the file you download with the following changes so it works with our regul
 # Remove line #37 from the automated install script
 sudo mkdir -p /data/findora
 # Update line #74 (75 before you delete the line above), remove sudo and update user account
-chown -R servicefindora:servicefindora ${ROOT_DIR}/tendermint/
+sudo chown -R servicefindora:servicefindora /data/findora
 ```
 
 ### Run script
