@@ -75,8 +75,8 @@ chmod +x fn
 sudo mv fn /usr/local/bin/
 ```
 
-### Create Wallet & Directory Structure
-We suggest using a fresh wallet and creating your key file on your node for security. Always keep this information private as it unlocks access to your wallet. To generate a new wallet run the following command:
+### Create Wallet, Directory Structure, and Move Keys
+Run initial setup items:
 
 ```bash
 # go to your home directory
@@ -91,14 +91,14 @@ export ROOT_DIR=/data/findora/mainnet/
 sudo chown -R servicefindora:servicefindora /data/findora/
 ```
 
-This next step creates a wallet if you need one, otherwise import your wallet or create the file tmp.gen.keypair with your previous information!
+Create or import your wallet. **Note**: This next step creates a wallet if you need a new wallet. Otherwise you would instead import your wallet (create the file tmp.gen.keypair file) with your previous information!
 
 ```bash
 # send command to create wallet
 fn genkey > tmp.gen.keypair
 ```
 
-Move your key:
+Move your wallet to the key location:
 
 ```bash
 # copy key file to location that validator will use now that the location exists
