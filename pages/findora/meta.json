@@ -1,6 +1,5 @@
 {
   "index": "Start Here",
-  "automated": "Automated Install",
-  "manual": "Manual Install",
+  "easynode": "Easy Node Install",
   "post": "Post Installation"
 }
