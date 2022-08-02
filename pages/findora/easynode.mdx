@@ -35,7 +35,7 @@ Set a password, you can skip filling out the user info by pressing enter to leav
 sudo usermod -aG sudo servicefindora
 ```
 
-Now you can disconnect and reconnect as the new user account. You can also prep the user account `~/.ssh` folder and SSH keys to use that login option at this time.
+Now you can disconnect and reconnect as the newly created user account. You can also prep the user account `~/.ssh` folder and SSH keys to use that login option at this time if you use keys for login access.
 
 ### Install Docker
 The official guide doesn't mention that you need to install Docker. 
@@ -60,9 +60,7 @@ sudo apt install docker-ce -y
 sudo usermod -aG docker servicefindora
 ```
 
-At this point close your terminal and reconnect to enable the new permissions.
-
-Once reconnected, confirm your user is in the proper groups with:
+At this point you'll need to **disconnect and reconnect** for the group permissions to be applied. Close out and reconnect! Once reconnected, confirm your user is in the proper groups with:
 
 ```bash
 groups
