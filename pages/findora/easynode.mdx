@@ -75,7 +75,7 @@ chmod +x fn
 sudo mv fn /usr/local/bin/
 ```
 
-### Create Wallet
+### Create Wallet & Directory Structure
 We suggest using a fresh wallet and creating your key file on your node for security. Always keep this information private as it unlocks access to your wallet. To generate a new wallet run the following command:
 
 ```bash
@@ -94,7 +94,7 @@ cp tmp.gen.keypair ~/
 cp tmp.gen.keypair /data/findora/mainnet/mainnet_node.key
 ```
 
-### Create memonic file
+### Create Memonic File
 Setup private phrase info for the `fn` application to access your wallet. If you need your mnemonic phrase run `cat tmp.gen.keypair` to reveal your **private validation information and mnemonic words** to you. This is a good time to make a copy/back up your wallet file information (tmp.gen.keypair) for restoration of your validator:
 
 ```bash
@@ -103,7 +103,7 @@ Setup private phrase info for the `fn` application to access your wallet. If you
 echo <24 mnemonic keywords> > ${ROOT_DIR}/node.mnemonic
 ```
 
-### Create initial docker container
+### Create Docker Container
 To avoid a future bug, manually run this at this point to download the container image and initialize items:
 
 ```bash
