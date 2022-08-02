@@ -140,32 +140,21 @@ docker run -d \
     --enable-eth-api-service
 ```
 
-### Download Script
+### Download Update Version Script
 
-See [this link](https://wiki.findora.org/docs/guides/auto-setup#download-and-run-the-automated-setup-script) to get the most updated version of the installation script for Testnet or Mainnet.
+See [this link](https://wiki.findora.org/docs/guides/auto-setup#download-and-run-the-automated-setup-script) to get the most updated version of the **version_update_mainnet.sh** script to run.
 
 Example command you can use to download the script to your server, **copy the current link from their guide as it may be newer!**:
 
 ```bash
-wget https://wiki.findora.org/assets/files/node_init_mainnet-423a36f2afake9de7ff63e61d3d4c1.sh
-```
-
-### Customize Script
-We suggest making two modifications to the script before you run it to allow everything to flow as your regular user account. 
-
-Edit the file you download (for either mainnet or testnet) with the following changes so it works with our regular user account:
-```bash
-# Remove line #37 from the automated install script
-sudo mkdir -p /data/findora
-# Update line #74 (75 before you delete the line above), remove sudo and update user account
-chown -R servicefindora:servicefindora ${ROOT_DIR}/tendermint/
+wget https://wiki.findora.org/assets/files/update_version_mainnet-4f20384f16d1f0e2d90e1f7ebc7ea935.sh
 ```
 
 ### Run script
 You should now be ready to run the automated installation script. This will pull in all files need and extract them. It may take 15+ minutes for this to complete but if all is successful you will be online and the database will be syncing:
 
 ```bash
-bash -x node_init_mainnet-423a36f2afake9de7ff63e61d3d4c1.sh
+bash -x update_version_mainnet-4f20384f16d1f0e2d90e1f7ebc7ea935.sh
 ```
 
 ## After Installation
@@ -178,6 +167,19 @@ See [this section](https://wiki.findora.org/docs/guides/auto-setup#fund-your-val
 See [this section](https://wiki.findora.org/docs/guides/auto-setup#stake-initial-fra-and-set-commission-rate) for information on customizing and sending the command to create your validator.
 
 After you sucessfully register your wallet and stake your initial Findora your validator will show up on the [staking dashboard](https://findorascan.io/nodes) along with the [SmartStake site](https://findora.smartstake.io/).
+
+### Backup Recovery Data Files
+Backup the following files, run `cat <filename>` to see the contents or use an sFTP program to transfer them to a secure location. These contain private information, do not share!!!
+
+```bash
+# Wallet recovery files
+tmp.gen.keypair
+node.mnemonic
+# Validator information file, this one can be recreated but handy to save
+staker_memo
+# Validator recovery file
+/data/findora/mainnet/tendermint/config/priv_validator_key.json
+```
 
 ## Monitor Validator
 Check out our [Post Installation](/findora/post) section for the management commands!
