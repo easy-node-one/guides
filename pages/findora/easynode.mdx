@@ -1,8 +1,12 @@
+import Callout from 'nextra-theme-docs/callout'
+import Image from 'next/image'
+
 # Easy Node's Findora "Automated" Validator Setup Guide
 This guide is for setting up a brand new wallet & validator for the first time. 
 
-### Our Notes on Moving Servers
+<Callout type="warning" emoji="⚠️">
 If you're moving to a new server you can mostly use this guide but see our notes on moving over tmp.gen.keypair and priv_validator_key.json [right here](https://guides.easyonde.one/findora/moving).
+</Callout>
 
 ## Intro
 We find that only using the automated setup has some challenges unless you're comfortable running your applications as root (We are not comfortable with that and will guide you through setting up a user to run findora as instead!).
@@ -66,7 +70,9 @@ sudo apt install docker-ce -y
 sudo usermod -aG docker servicefindora
 ```
 
+<Callout type="error" emoji="️🚫">
 At this point you'll need to **disconnect and reconnect** for the group permissions to be applied. Close out and reconnect! Once reconnected, confirm your user is in the proper groups with:
+</Callout>
 
 ```bash
 groups
@@ -105,12 +111,18 @@ export ROOT_DIR=/data/findora/mainnet/
 sudo chown -R servicefindora:servicefindora /data/findora/
 ```
 
+<Callout type="error" emoji="️🚫">
 Create or import your wallet. **Note**: This next step creates a wallet if you need a new wallet. Otherwise you would instead import your wallet (create the file tmp.gen.keypair file) with your previous information!
+</Callout>
+
+If you're creating a new wallet run the following:
 
 ```bash
 # send command to create wallet
 fn genkey > tmp.gen.keypair
 ```
+
+If you're importing a wallet you can use `cat ~/tmp.gen.keypair` to see if your key is loaded or use `nano ~/tmp.gen.keypair` or `vim ~/tmp.gen.keypair` to edit your file to restore it.
 
 Move your wallet to the key location:
 
