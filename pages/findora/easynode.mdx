@@ -96,7 +96,7 @@ sudo mv fn /usr/local/bin/
 ```
 
 ### Create Wallet, Directory Structure, and Move Keys
-Run initial setup items:
+Run initial setup items, you can skip the lines that start with # those are just notes:
 
 ```bash
 # go to your home directory
@@ -122,7 +122,9 @@ If you're creating a new wallet run the following:
 fn genkey > tmp.gen.keypair
 ```
 
-If you're importing a wallet you can use `cat ~/tmp.gen.keypair` to see if your key is loaded or use `nano ~/tmp.gen.keypair` or `vim ~/tmp.gen.keypair` to edit your file to restore it.
+<Callout type="warning" emoji="⚠️">
+If you're importing a wallet instead of creating one you can use `cat ~/tmp.gen.keypair` to see if your key is loaded or use `nano ~/tmp.gen.keypair` or `vim ~/tmp.gen.keypair` to edit your file to restore it.
+</Callout>
 
 Move your wallet to the key location:
 
